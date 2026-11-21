@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Sharp Cut Barbershop — Classic Cuts, Hot Towel Shaves &amp; Beard Care</title>
+<meta name="description" content="The Sharp Cut Barbershop: classic haircuts, hot towel shaves, beard sculpting and kids' cuts. Book online, walk-ins welcome. Open 7 days a week.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="logo" href="#top">✂️ The Sharp Cut</a>
+    <nav class="main-nav" id="mainNav">
+      <a href="#services">Services</a>
+      <a href="#barbers">Barbers</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#visit">Visit Us</a>
+      <a class="btn btn-small" href="#book">Book a Chair</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu">☰</button>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="container hero-inner">
+    <p class="hero-kicker">Est. 2012 · Walk-ins welcome</p>
+    <h1>Look sharp.<br>Feel sharper.</h1>
+    <p class="hero-sub">Classic cuts, hot towel shaves and beard sculpting from barbers who've been doing it for decades. No rush, no fuss — just a great cut, every time.</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="#book">Book a Chair</a>
+      <a class="btn btn-ghost" href="#services">See Services &amp; Prices</a>
+    </div>
+    <div class="hero-stats">
+      <div><strong>4.9 ★</strong><span>1,240+ reviews</span></div>
+      <div><strong>13 yrs</strong><span>Cutting hair</span></div>
+      <div><strong>30 min</strong><span>Average appointment</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="services">
+  <div class="container">
+    <h2>Services &amp; Prices</h2>
+    <p class="section-intro">Pick a service, pick a barber, pick a time. All cuts include a wash, style and a hot lather neckline finish.</p>
+
+    <div class="filter-row">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="hair">Hair</button>
+      <button class="filter-btn" data-filter="beard">Beard</button>
+      <button class="filter-btn" data-filter="shave">Shave</button>
+      <button class="filter-btn" data-filter="kids">Kids</button>
+    </div>
+
+    <div class="service-grid" id="serviceGrid">
+      <article class="service-card" data-category="hair" data-service="Classic Cut" data-price="28">
+        <div class="service-top"><h3>Classic Cut</h3><span class="price">$28</span></div>
+        <p>Scissor and clipper cut, wash, style and hot lather neckline. The timeless Sharp Cut.</p>
+        <p class="service-meta">⏱ 30 min</p>
+        <button class="btn btn-outline book-service">Book this</button>
+      </article>
+      <article class="service-card" data-category="hair" data-service="Skin Fade" data-price="32">
+        <div class="service-top"><h3>Skin Fade</h3><span class="price">$32</span></div>
+        <p>Zero fade, low fade or high fade, blended to perfection with a razor-sharp line-up.</p>
+        <p class="service-meta">⏱ 40 min</p>
+        <button class="btn btn-outline book-service">Book this</button>
+      </article>
+      <article class="service-card" data-category="beard" data-service="Beard Sculpt &amp; Trim" data-price="20">
+        <div class="service-top"><h3>Beard Sculpt &amp; Trim</h3><span class="price">$20</span></div>
+        <p>Shaped, tapered and detailed to your face, finished with beard oil and balm.</p>
+        <p class="service-meta">⏱ 20 min</p>
+        <button class="btn btn-outline book-service">Book this</button>
+      </article>
+      <article class="service-card" data-category="shave" data-service="Hot Towel Shave" data-price="35">
+        <div class="service-top"><h3>Hot Towel Shave</h3><span class="price">$35</span></div>
+        <p>Traditional straight-razor shave with hot towels, pre-shave oil and a cold towel finish.</p>
+        <p class="service-meta">⏱ 35 min</p>
+        <button class="btn btn-outline book-service">Book this</button>
+      </article>
+      <article class="service-card" data-category="hair beard" data-service="The Full Works" data-price="55">
+        <div class="service-top"><h3>The Full Works</h3><span class="price">$55</span></div>
+        <p>Classic cut, hot towel shave and beard sculpt in one chair, one appointment. Our best value.</p>
+        <p class="service-meta">⏱ 60 min · ★ Most popular</p>
+        <button class="btn btn-outline book-service">Book this</button>
+      </article>
+      <article class="service-card" data-category="hair" data-service="Grey Blending" data-price="25">
+        <div class="service-top"><h3>Grey Blending</h3><span class="price">$25</span></div>
+        <p>Subtle colour that takes the edge off the grey without looking dyed. Washes out gradually.</p>
+        <p class="service-meta">⏱ 25 min</p>
+        <button class="btn btn-outline book-service">Book this</button>
+      </article>
+      <article class="service-card" data-category="kids" data-service="Kids' Cut (under 12)" data-price="20">
+        <div class="service-top"><h3>Kids' Cut (under 12)</h3><span class="price">$20</span></div>
+        <p>Patient, friendly first cuts and school-ready styles — with a lollipop at the end.</p>
+        <p class="service-meta">⏱ 25 min</p>
+        <button class="btn btn-outline book-service">Book this</button>
+      </article>
+      <article class="service-card" data-category="hair" data-service="Cut &amp; Colour" data-price="48">
+        <div class="service-top"><h3>Cut &amp; Colour</h3><span class="price">$48</span></div>
+        <p>Full cut plus colour, highlights or a bold statement shade. Consultation included.</p>
+        <p class="service-meta">⏱ 75 min</p>
+        <button class="btn btn-outline book-service">Book this</button>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section section-dark" id="barbers">
+  <div class="container">
+    <h2>Meet the Barbers</h2>
+    <p class="section-intro">Every chair is a master chair. Pick your barber when you book — or take pot luck and meet someone new.</p>
+    <div class="barber-grid">
+      <article class="barber-card">
+        <div class="barber-avatar" aria-hidden="true">🧔</div>
+        <h3>Marcus "Marv" Cole</h3>
+        <p class="barber-role">Founder · Master Barber</p>
+        <p>21 years behind the chair. Fades, flat tops and the straight razor are his home turf.</p>
+        <p class="barber-tags">Fades · Hot towel shaves · Flat tops</p>
+      </article>
+      <article class="barber-card">
+        <div class="barber-avatar" aria-hidden="true">👨</div>
+        <h3>Danny Okafor</h3>
+        <p class="barber-role">Senior Barber</p>
+        <p>12 years cutting. The go-to for textured hair, curls and precise beard work.</p>
+        <p class="barber-tags">Textured hair · Beard sculpting · Kids</p>
+      </article>
+      <article class="barber-card">
+        <div class="barber-avatar" aria-hidden="true">🧑</div>
+        <h3>Sam Rivera</h3>
+        <p class="barber-role">Barber &amp; Colourist</p>
+        <p>9 years cutting and colouring. Grey blending, highlights and bold colour — done properly.</p>
+        <p class="barber-tags">Colour · Grey blending · Modern cuts</p>
+      </article>
+      <article class="barber-card">
+        <div class="barber-avatar" aria-hidden="true">👴</div>
+        <h3>Frank Delaney</h3>
+        <p class="barber-role">Traditional Barber</p>
+        <p>38 years in the trade. Old-school scissor cuts, side partings and a proper hot towel shave.</p>
+        <p class="barber-tags">Classic cuts · Shaves · Weddings</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="gallery">
+  <div class="container">
+    <h2>Fresh Out of the Chair</h2>
+    <p class="section-intro">Recent work from the shop floor. Tap any style to book it.</p>
+    <div class="gallery-grid" id="galleryGrid">
+      <figure class="gallery-item" data-service="Skin Fade"><div class="gallery-art art-fade">💈</div><figcaption>Skin fade with line-up</figcaption></figure>
+      <figure class="gallery-item" data-service="Classic Cut"><div class="gallery-art art-classic">✂️</div><figcaption>Classic side part</figcaption></figure>
+      <figure class="gallery-item" data-service="Beard Sculpt &amp; Trim"><div class="gallery-art art-beard">🧔</div><figcaption>Beard sculpt &amp; shape-up</figcaption></figure>
+      <figure class="gallery-item" data-service="Hot Towel Shave"><div class="gallery-art art-shave">🪒</div><figcaption>Hot towel shave finish</figcaption></figure>
+      <figure class="gallery-item" data-service="The Full Works"><div class="gallery-art art-works">🔥</div><figcaption>The Full Works</figcaption></figure>
+      <figure class="gallery-item" data-service="Kids' Cut (under 12)"><div class="gallery-art art-kids">👦</div><figcaption>Kids' cut, school-ready</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="section section-dark" id="reviews">
+  <div class="container">
+    <h2>What the Neighbourhood Says</h2>
+    <div class="review-grid">
+      <blockquote class="review-card"><p>"Best fade in town, hands down. Marv remembered exactly how I like it after one visit."</p><footer>— Jordan P. ★★★★★</footer></blockquote>
+      <blockquote class="review-card"><p>"Took my 6-year-old for his first haircut. Danny was so patient — he left smiling with a lollipop."</p><footer>— Priya S. ★★★★★</footer></blockquote>
+      <blockquote class="review-card"><p>"The hot towel shave is worth every penny. I walk out feeling like a new man."</p><footer>— Tom W. ★★★★★</footer></blockquote>
+      <blockquote class="review-card"><p>"Booked online in two minutes, in the chair on time, out looking sharp. Zero fuss."</p><footer>— Andre M. ★★★★☆</footer></blockquote>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="book">
+  <div class="container booking-wrap">
+    <div>
+      <h2>Book a Chair</h2>
+      <p class="section-intro">Pick a service, a barber and a time. We'll confirm by text within 10 minutes during opening hours.</p>
+      <ul class="booking-points">
+        <li>✓ Free cancellation up to 2 hours before</li>
+        <li>✓ Walk-ins welcome when chairs are free</li>
+        <li>✓ Pay in shop — card or cash</li>
+      </ul>
+    </div>
+    <form id="bookingForm" class="booking-form" novalidate>
+      <label>Your name
+        <input type="text" id="bkName" required placeholder="e.g. Alex Morgan">
+      </label>
+      <label>Phone
+        <input type="tel" id="bkPhone" required placeholder="e.g. 555-014-2233">
+      </label>
+      <label>Service
+        <select id="bkService">
+          <option>Classic Cut — $28</option>
+          <option>Skin Fade — $32</option>
+          <option>Beard Sculpt &amp; Trim — $20</option>
+          <option>Hot Towel Shave — $35</option>
+          <option>The Full Works — $55</option>
+          <option>Grey Blending — $25</option>
+          <option>Kids' Cut (under 12) — $20</option>
+          <option>Cut &amp; Colour — $48</option>
+        </select>
+      </label>
+      <label>Barber
+        <select id="bkBarber">
+          <option>First available</option>
+          <option>Marcus "Marv" Cole</option>
+          <option>Danny Okafor</option>
+          <option>Sam Rivera</option>
+          <option>Frank Delaney</option>
+        </select>
+      </label>
+      <div class="form-row">
+        <label>Date
+          <input type="date" id="bkDate" required>
+        </label>
+        <label>Time
+          <select id="bkTime">
+            <option>09:00</option><option>10:00</option><option>11:00</option>
+            <option>12:00</option><option>13:00</option><option>14:00</option>
+            <option>15:00</option><option>16:00</option><option>17:00</option>
+            <option>18:00</option>
+          </select>
+        </label>
+      </div>
+      <button class="btn btn-primary btn-block" type="submit">Confirm Booking</button>
+      <p class="form-note" id="bookingMsg" role="status"></p>
+    </form>
+  </div>
+</section>
+
+<section class="section section-dark" id="visit">
+  <div class="container visit-grid">
+    <div>
+      <h2>Visit Us</h2>
+      <p>14 High Street, Old Town<br>Open 7 days a week</p>
+      <table class="hours-table">
+        <tr><td>Monday – Friday</td><td>9:00 – 19:00</td></tr>
+        <tr><td>Saturday</td><td>8:00 – 18:00</td></tr>
+        <tr><td>Sunday</td><td>10:00 – 16:00</td></tr>
+      </table>
+      <p>📞 (555) 014-2233<br>✉️ hello@thesharpcut.example</p>
+    </div>
+    <div>
+      <h2>Good to Know</h2>
+      <ul class="info-list">
+        <li>Free parking behind the shop (2 hours)</li>
+        <li>Complimentary coffee while you wait</li>
+        <li>Wedding parties &amp; groomsmen packages — ask in shop</li>
+        <li>Gift vouchers available from $20</li>
+      </ul>
+      <form id="newsletterForm" class="newsletter-form" novalidate>
+        <label for="nlEmail">Get 10% off your first cut — join the list</label>
+        <div class="newsletter-row">
+          <input type="email" id="nlEmail" required placeholder="you@example.com">
+          <button class="btn btn-primary" type="submit">Join</button>
+        </div>
+        <p class="form-note" id="nlMsg" role="status"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <p>© 2026 The Sharp Cut Barbershop · 14 High Street, Old Town</p>
+    <p>Day 11 of the Daily Websites project.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

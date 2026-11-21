@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Riverstone Pottery Studio — Handmade Ceramics, Classes &amp; Gallery</title>
+<meta name="description" content="Riverstone Pottery Studio — wheel-throwing classes, handmade ceramics shop, open studio nights and a gallery of one-of-a-kind pieces.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="logo" href="#top">🏺 Riverstone <span>Pottery Studio</span></a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+    <nav class="main-nav" id="mainNav">
+      <a href="#classes">Classes</a>
+      <a href="#shop">Shop</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#studio">The Studio</a>
+      <a href="#visit">Visit Us</a>
+      <a href="#book" class="btn btn-small">Book a Class</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="container hero-inner">
+    <div class="hero-text">
+      <p class="eyebrow">Handmade ceramics · Est. 2016</p>
+      <h1>Shape clay.<br>Find your calm.</h1>
+      <p class="lead">Wheel-throwing classes, open studio nights and one-of-a-kind handmade
+      pottery — made slowly, by hand, in our riverside studio.</p>
+      <div class="hero-actions">
+        <a href="#book" class="btn">Book a Class</a>
+        <a href="#shop" class="btn btn-ghost">Browse the Shop</a>
+      </div>
+      <ul class="hero-stats">
+        <li><strong>2,400+</strong> students taught</li>
+        <li><strong>18</strong> wheels in the studio</li>
+        <li><strong>4.9 ★</strong> from 600+ reviews</li>
+      </ul>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      <div class="pot pot-1">🏺</div>
+      <div class="pot pot-2">⚱️</div>
+      <div class="pot pot-3">🍶</div>
+      <div class="hero-badge">New! Beginner wheel course — starts Saturday</div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="classes">
+  <div class="container">
+    <h2>Classes &amp; Workshops</h2>
+    <p class="section-intro">From your very first lump of clay to a finished glazed piece.
+    All materials, tools and firing included.</p>
+    <div class="filter-bar" role="group" aria-label="Filter classes by level">
+      <button class="chip active" data-level="all">All levels</button>
+      <button class="chip" data-level="beginner">Beginner</button>
+      <button class="chip" data-level="intermediate">Intermediate</button>
+      <button class="chip" data-level="advanced">Advanced</button>
+      <button class="chip" data-level="kids">Kids &amp; families</button>
+    </div>
+    <div class="cards" id="classList"></div>
+    <p class="results-count" id="classCount"></p>
+  </div>
+</section>
+
+<section class="section section-alt" id="shop">
+  <div class="container">
+    <h2>The Shop</h2>
+    <p class="section-intro">Every piece is thrown, trimmed and glazed by hand in the studio.
+    No two are ever exactly alike.</p>
+    <div class="shop-tools">
+      <input type="search" id="shopSearch" placeholder="Search mugs, bowls, vases…" aria-label="Search the shop">
+      <select id="shopSort" aria-label="Sort shop items">
+        <option value="featured">Featured</option>
+        <option value="price-asc">Price: low to high</option>
+        <option value="price-desc">Price: high to low</option>
+        <option value="name">Name A–Z</option>
+      </select>
+    </div>
+    <div class="cards" id="shopList"></div>
+    <p class="results-count" id="shopCount"></p>
+    <div class="basket" id="basketBox">
+      <h3>🧺 Your basket <span id="basketCount">(0 items)</span></h3>
+      <ul id="basketItems"></ul>
+      <p class="basket-total">Total: <strong id="basketTotal">$0</strong></p>
+      <p class="basket-empty" id="basketEmpty">Your basket is empty — add a piece you love.</p>
+      <button class="btn" id="checkoutBtn" disabled>Checkout</button>
+      <p class="basket-note" id="basketNote"></p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="gallery">
+  <div class="container">
+    <h2>From the Kiln — Gallery</h2>
+    <p class="section-intro">Fresh out of the kiln this month. Click any piece to see it up close.</p>
+    <div class="gallery-grid" id="galleryGrid"></div>
+    <div class="lightbox" id="lightbox" hidden>
+      <button class="lightbox-close" id="lightboxClose" aria-label="Close">✕</button>
+      <div class="lightbox-content">
+        <div class="lightbox-emoji" id="lightboxEmoji"></div>
+        <h3 id="lightboxTitle"></h3>
+        <p id="lightboxText"></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="studio">
+  <div class="container">
+    <h2>The Studio</h2>
+    <div class="studio-grid">
+      <div class="studio-card">
+        <h3>🌀 Open Studio Nights</h3>
+        <p>Every Thursday, 6–9 pm. Bring a project or start something new —
+        wheels, tools and guidance included. $25 per session.</p>
+      </div>
+      <div class="studio-card">
+        <h3>🎨 Glazing Bar</h3>
+        <p>Pick a bisque-fired piece, paint it with our glazes, and we fire it
+        for you. Ready to collect in a week.</p>
+      </div>
+      <div class="studio-card">
+        <h3>🎉 Private Parties</h3>
+        <p>Birthdays, hen parties, team days — a private wheel session for up
+        to 12 people, with cake table and aprons provided.</p>
+      </div>
+      <div class="studio-card">
+        <h3>🔥 Kiln Firing Service</h3>
+        <p>Bring your own bisqueware for firing in our gas kiln. $8 per piece,
+        cone 6, fired twice a month.</p>
+      </div>
+    </div>
+    <h3 class="subheading">How a piece is made</h3>
+    <ol class="process">
+      <li><strong>1. Wedge</strong> — knead the clay to remove air bubbles.</li>
+      <li><strong>2. Throw</strong> — centre the clay and shape it on the wheel.</li>
+      <li><strong>3. Trim</strong> — refine the foot and walls once leather-hard.</li>
+      <li><strong>4. Bisque fire</strong> — first firing to harden the piece.</li>
+      <li><strong>5. Glaze</strong> — dip or paint on colour and texture.</li>
+      <li><strong>6. Glaze fire</strong> — the kiln works its magic at 1,220°C.</li>
+    </ol>
+  </div>
+</section>
+
+<section class="section" id="book">
+  <div class="container narrow">
+    <h2>Book a Class</h2>
+    <p class="section-intro">Pick a class and a date — we'll confirm your spot by email within a day.</p>
+    <form id="bookingForm" class="form">
+      <label>Your name
+        <input type="text" id="bookName" required placeholder="e.g. Alex Morgan">
+      </label>
+      <label>Email
+        <input type="email" id="bookEmail" required placeholder="you@example.com">
+      </label>
+      <label>Class
+        <select id="bookClass" required></select>
+      </label>
+      <label>Preferred date
+        <input type="date" id="bookDate" required>
+      </label>
+      <label>Number of people
+        <select id="bookPeople">
+          <option>1</option><option>2</option><option>3</option><option>4</option>
+        </select>
+      </label>
+      <button type="submit" class="btn">Request Booking</button>
+      <p class="form-note" id="bookingNote" role="status"></p>
+    </form>
+  </div>
+</section>
+
+<section class="section section-alt" id="visit">
+  <div class="container visit-grid">
+    <div>
+      <h2>Visit Us</h2>
+      <address>
+        Riverstone Pottery Studio<br>
+        14 Mill Lane, Riverside<br>
+        Open Tue–Sun, 10 am – 6 pm<br>
+        (Open Studio Night Thu until 9 pm)
+      </address>
+      <p>📞 (555) 014-8820<br>✉️ hello@riverstonepottery.example</p>
+      <p>Find us by the old mill bridge — look for the terracotta door and the
+      smell of fresh clay.</p>
+    </div>
+    <form id="newsletterForm" class="form newsletter">
+      <h3>Kiln Notes — our monthly newsletter</h3>
+      <p>New classes, fresh glazes and first dibs on shop pieces.</p>
+      <label>Email
+        <input type="email" id="newsletterEmail" required placeholder="you@example.com">
+      </label>
+      <button type="submit" class="btn">Subscribe</button>
+      <p class="form-note" id="newsletterNote" role="status"></p>
+    </form>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>© 2026 Riverstone Pottery Studio · Made by hand, fired with care.</p>
+    <p class="footer-note">Demo website built for the daily-websites project — Day 07.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

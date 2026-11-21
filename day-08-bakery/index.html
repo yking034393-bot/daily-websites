@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Golden Whisk — Artisan Bakery</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="#">🥐 The Golden Whisk</a>
+      <nav class="main-nav" id="mainNav">
+        <a href="#bakery">Bakery</a>
+        <a href="#bread">Bread Schedule</a>
+        <a href="#cakes">Custom Cakes</a>
+        <a href="#story">Our Story</a>
+        <a href="#visit">Visit Us</a>
+      </nav>
+      <button class="basket-btn" id="basketBtn" aria-label="Open basket">
+        🧺 Basket <span class="basket-count" id="basketCount">0</span>
+      </button>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-text">
+        <p class="eyebrow">Baked at dawn · Sold out by noon</p>
+        <h1>Real bread.<br>Real butter.<br>No shortcuts.</h1>
+        <p class="hero-sub">A small neighbourhood artisan bakery. Slow-fermented sourdough,
+          laminated croissants, and cakes made to order — every single day.</p>
+        <div class="hero-actions">
+          <a href="#bakery" class="btn btn-primary">Shop today's bakes</a>
+          <a href="#cakes" class="btn btn-secondary">Order a custom cake</a>
+        </div>
+        <p class="hero-note">⏰ Open Tue–Sun, 7:00am – 3:00pm · 14 Rosewood Lane</p>
+      </div>
+      <div class="hero-card">
+        <p class="hero-card-title">🔥 Out of the oven now</p>
+        <ul class="oven-list" id="ovenList"></ul>
+        <p class="hero-card-foot">Bakes sell fast — reserve online and skip the queue.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="strip">
+    <div class="container strip-inner">
+      <span>🌾 Stone-milled flour</span>
+      <span>🧈 French butter</span>
+      <span>🕐 36-hour ferment</span>
+      <span>🚫 No preservatives</span>
+      <span>🌱 Vegan options daily</span>
+    </div>
+  </section>
+
+  <main class="container">
+    <section id="bakery" class="section">
+      <h2>Today's Bakery</h2>
+      <p class="section-sub">Everything below is baked fresh this morning. Add to your basket and
+        collect in store, or reserve for later today.</p>
+
+      <div class="controls">
+        <input type="search" id="searchInput" placeholder="Search bakes — try “sourdough”…" aria-label="Search bakes">
+        <div class="filters" id="categoryFilters">
+          <button data-category="all" class="active">All</button>
+          <button data-category="bread">Breads</button>
+          <button data-category="pastry">Pastries</button>
+          <button data-category="sweet">Sweet bakes</button>
+          <button data-category="vegan">Vegan</button>
+        </div>
+        <select id="sortSelect" aria-label="Sort bakes">
+          <option value="name">Sort: Name A–Z</option>
+          <option value="price-asc">Price: low to high</option>
+          <option value="price-desc">Price: high to low</option>
+        </select>
+      </div>
+
+      <div class="product-grid" id="productGrid"></div>
+      <p class="empty-msg" id="emptyMsg" hidden>No bakes match your search. Try a different word or category.</p>
+    </section>
+
+    <section id="bread" class="section">
+      <h2>Daily Bread Schedule</h2>
+      <p class="section-sub">Our ovens run on a rhythm. Here's when each loaf comes out — and when it usually sells out.</p>
+      <div class="schedule" id="scheduleList"></div>
+    </section>
+
+    <section id="cakes" class="section">
+      <h2>Custom Cakes, Made to Order</h2>
+      <p class="section-sub">Birthdays, weddings, or just because. Tell us what you dream of —
+        we bake it, 48 hours' notice, from $45.</p>
+      <div class="cake-layout">
+        <div class="cake-menu">
+          <h3>Signature cakes</h3>
+          <ul class="cake-list" id="cakeList"></ul>
+        </div>
+        <form class="cake-form" id="cakeForm">
+          <h3>Request your cake</h3>
+          <label>Name
+            <input type="text" id="cakeName" required placeholder="Your name">
+          </label>
+          <label>Occasion
+            <select id="cakeOccasion">
+              <option>Birthday</option>
+              <option>Wedding</option>
+              <option>Anniversary</option>
+              <option>Graduation</option>
+              <option>Just because</option>
+            </select>
+          </label>
+          <label>Flavour
+            <select id="cakeFlavour">
+              <option>Chocolate &amp; salted caramel</option>
+              <option>Vanilla bean &amp; raspberry</option>
+              <option>Lemon &amp; elderflower</option>
+              <option>Pistachio &amp; rose</option>
+              <option>Carrot &amp; cream cheese</option>
+            </select>
+          </label>
+          <label>Servings
+            <input type="number" id="cakeServings" min="6" max="120" value="12" required>
+          </label>
+          <label>Collection date
+            <input type="date" id="cakeDate" required>
+          </label>
+          <label>Anything else?
+            <textarea id="cakeNotes" rows="3" placeholder="Colours, message on top, dietary needs…"></textarea>
+          </label>
+          <button type="submit" class="btn btn-primary">Request this cake</button>
+          <p class="form-msg" id="cakeMsg" role="status"></p>
+        </form>
+      </div>
+    </section>
+
+    <section id="story" class="section">
+      <h2>Our Story</h2>
+      <div class="story-layout">
+        <div class="story-text">
+          <p>The Golden Whisk started in 2019 with one second-hand oven, a bag of
+            flour, and a stubborn belief: bread should take time. Our starter,
+            "Goldie", is now six years old and still leavens every loaf we bake.</p>
+          <p>We mill our own flour, laminate our croissants by hand, and never
+            bake more than we can sell in a day — because yesterday's bread
+            belongs to the birds, not to you.</p>
+          <div class="stats">
+            <div class="stat"><strong>6</strong><span>years baking</span></div>
+            <div class="stat"><strong>36h</strong><span>slow ferment</span></div>
+            <div class="stat"><strong>14</strong><span>bakes daily</span></div>
+            <div class="stat"><strong>0</strong><span>preservatives</span></div>
+          </div>
+        </div>
+        <div class="story-steps">
+          <h3>How a loaf is made</h3>
+          <ol>
+            <li><strong>Mix</strong> — flour, water, salt, and Goldie the starter.</li>
+            <li><strong>Rest</strong> — 36 hours of slow, cold fermentation.</li>
+            <li><strong>Shape</strong> — by hand, every single loaf.</li>
+            <li><strong>Bake</strong> — stone hearth, 240°C, steam and patience.</li>
+            <li><strong>Cool</strong> — at least an hour before it leaves the shelf.</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section id="visit" class="section">
+      <h2>Visit Us</h2>
+      <div class="visit-layout">
+        <div>
+          <p><strong>📍 14 Rosewood Lane</strong><br>Open Tuesday – Sunday, 7:00am – 3:00pm<br>
+            Closed Mondays (the ovens rest too).</p>
+          <p>📞 (555) 014-8820<br>✉️ hello@goldenwhisk.example</p>
+          <form class="newsletter" id="newsletterForm">
+            <label for="newsEmail">Get the daily bake list by email:</label>
+            <div class="news-row">
+              <input type="email" id="newsEmail" required placeholder="you@example.com">
+              <button type="submit" class="btn btn-primary">Subscribe</button>
+            </div>
+            <p class="form-msg" id="newsMsg" role="status"></p>
+          </form>
+        </div>
+        <div class="hours-card">
+          <h3>Opening hours</h3>
+          <dl>
+            <div><dt>Mon</dt><dd>Closed</dd></div>
+            <div><dt>Tue – Fri</dt><dd>7:00am – 3:00pm</dd></div>
+            <div><dt>Saturday</dt><dd>7:00am – 4:00pm</dd></div>
+            <div><dt>Sunday</dt><dd>8:00am – 2:00pm</dd></div>
+          </dl>
+          <p class="hours-note">Sourdough is ready from 8:00am. Croissants from 7:30am.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>🥐 The Golden Whisk — Artisan Bakery · 14 Rosewood Lane · Baked fresh daily, sold out most days.</p>
+      <p class="fine">Demo website built for the daily-websites series. Prices in USD.</p>
+    </div>
+  </footer>
+
+  <div class="basket-drawer" id="basketDrawer" aria-hidden="true">
+    <div class="basket-panel">
+      <div class="basket-head">
+        <h3>Your Basket</h3>
+        <button id="basketClose" aria-label="Close basket">✕</button>
+      </div>
+      <ul class="basket-items" id="basketItems"></ul>
+      <div class="basket-foot">
+        <p class="basket-total">Total: <strong id="basketTotal">$0.00</strong></p>
+        <button class="btn btn-primary" id="checkoutBtn">Reserve for collection</button>
+        <p class="form-msg" id="checkoutMsg" role="status"></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

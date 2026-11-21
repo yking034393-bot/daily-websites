@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dice &amp; Dragons — Board Game Café</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="brand">
+      <span class="brand-dice" aria-hidden="true">🎲</span>
+      <div>
+        <h1>Dice &amp; Dragons</h1>
+        <p class="tagline">Board Game Café &amp; Tavern</p>
+      </div>
+    </div>
+    <nav>
+      <a href="#games">Game Library</a>
+      <a href="#menu">Café Menu</a>
+      <a href="#events">Events</a>
+      <a href="#book">Book a Table</a>
+      <button id="basket-toggle" class="basket-btn" type="button">🧺 My Basket (<span id="basket-count">0</span>)</button>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <p class="hero-kicker">Over 400 games · Great coffee · Zero screen time</p>
+    <h2>Pull up a chair.<br>Your next adventure starts here.</h2>
+    <p class="hero-sub">Browse the library, reserve your favourite games, book a table and
+    settle in with friends — the kettle is always on and the dice are always warm.</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="#games">Browse the Library</a>
+      <a class="btn btn-ghost" href="#book">Book a Table</a>
+    </div>
+    <p class="open-status"><span id="open-dot" class="dot"></span> <span id="open-text">Checking opening hours…</span></p>
+  </div>
+</section>
+
+<section id="games" class="section">
+  <div class="container">
+    <h2>Game Library</h2>
+    <p class="section-intro">Reserve games ahead of your visit — they will be waiting on your table when you arrive. Rental is £2 per game, waived when you spend £10+ at the café.</p>
+
+    <div class="controls">
+      <input type="search" id="search" placeholder="Search games…" aria-label="Search games">
+      <select id="category-filter" aria-label="Filter by category">
+        <option value="all">All categories</option>
+        <option value="strategy">Strategy</option>
+        <option value="party">Party</option>
+        <option value="coop">Co-operative</option>
+        <option value="family">Family</option>
+        <option value="card">Card Games</option>
+        <option value="classic">Classics</option>
+      </select>
+      <select id="players-filter" aria-label="Filter by player count">
+        <option value="all">Any players</option>
+        <option value="2">2 players</option>
+        <option value="3-4">3–4 players</option>
+        <option value="5+">5+ players</option>
+      </select>
+      <select id="sort" aria-label="Sort games">
+        <option value="name">Sort: A–Z</option>
+        <option value="time-asc">Shortest first</option>
+        <option value="time-desc">Longest first</option>
+        <option value="difficulty">Easiest first</option>
+      </select>
+    </div>
+
+    <p id="result-count" class="result-count"></p>
+    <div id="game-grid" class="game-grid"></div>
+    <p id="no-results" class="no-results" hidden>No games match your filters — try clearing the search.</p>
+  </div>
+</section>
+
+<section id="menu" class="section section-alt">
+  <div class="container">
+    <h2>Café Menu</h2>
+    <p class="section-intro">Fuel for long campaigns. Everything is made to order — and yes, we have a strict no-greasy-fingers-on-the-cards policy (napkins provided!).</p>
+    <div class="menu-grid">
+      <div class="menu-card">
+        <h3>☕ Drinks</h3>
+        <ul class="menu-list">
+          <li><span>Flat White</span><b>£3.20</b></li>
+          <li><span>Mocha of the Dragon</span><b>£3.80</b></li>
+          <li><span>Chai Potion</span><b>£3.00</b></li>
+          <li><span>Bottomless Filter Coffee</span><b>£4.50</b></li>
+          <li><span>Craft Lemonade</span><b>£3.40</b></li>
+          <li><span>Local Ale — The Critical Hit</span><b>£4.80</b></li>
+        </ul>
+      </div>
+      <div class="menu-card">
+        <h3>🍰 Bites &amp; Bakes</h3>
+        <ul class="menu-list">
+          <li><span>Nat 20 Nachos</span><b>£6.50</b></li>
+          <li><span>Goblin Garlic Bread</span><b>£4.00</b></li>
+          <li><span>D20 Brownie (fudge, salted caramel)</span><b>£3.20</b></li>
+          <li><span>Mead Cake of the Bards</span><b>£4.20</b></li>
+          <li><span>Sharing Platter for 4</span><b>£14.00</b></li>
+          <li><span>Vegan Quest Bowl</span><b>£7.50</b></li>
+        </ul>
+      </div>
+      <div class="menu-card">
+        <h3>🎟️ Table &amp; Play</h3>
+        <ul class="menu-list">
+          <li><span>Table hire (per person, 3 hrs)</span><b>£4.00</b></li>
+          <li><span>All-day play pass</span><b>£7.00</b></li>
+          <li><span>Game rental (per game)</span><b>£2.00</b></li>
+          <li><span>Under-12s play free</span><b>Free</b></li>
+          <li><span>Membership — monthly</span><b>£15.00</b></li>
+        </ul>
+        <p class="menu-note">Game rental is waived when your café spend is £10+ per person.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="events" class="section">
+  <div class="container">
+    <h2>Weekly Events</h2>
+    <p class="section-intro">Something on every night. Walk-ins welcome unless marked — book a table to be sure of a seat.</p>
+    <div class="events-grid">
+      <article class="event-card"><span class="event-day">Mon</span><h3>Learn-to-Play Night</h3><p>Our game gurus teach a new modern classic every week. Perfect for first-timers.</p><p class="event-meta">6:30 pm · Free with table hire</p></article>
+      <article class="event-card"><span class="event-day">Tue</span><h3>Trivia Tavern</h3><p>Five rounds of gloriously nerdy general knowledge. Teams of up to 6, prizes for the winners.</p><p class="event-meta">7:00 pm · £2 per player</p></article>
+      <article class="event-card"><span class="event-day">Wed</span><h3>Dungeons &amp; Dragons Night</h3><p>Three tables, three DMs, one epic shared world. New players matched with a beginner table.</p><p class="event-meta">6:00 pm · £5 per player</p></article>
+      <article class="event-card"><span class="event-day">Thu</span><h3>Chess &amp; Strategy Club</h3><p>Quiet tables, serious play, gentle bragging rights. All levels welcome.</p><p class="event-meta">6:30 pm · Free</p></article>
+      <article class="event-card"><span class="event-day">Fri</span><h3>Friday Tournament</h3><p>A different game each week, knockout brackets, and a trophy that is honestly too big.</p><p class="event-meta">7:00 pm · £3 entry</p></article>
+      <article class="event-card"><span class="event-day">Sun</span><h3>Family Board Game Brunch</h3><p>Big tables, kid-friendly games, pancakes, and a "no phones at the table" house rule.</p><p class="event-meta">10:00 am · Table hire only</p></article>
+    </div>
+  </div>
+</section>
+
+<section id="book" class="section section-alt">
+  <div class="container booking-wrap">
+    <div>
+      <h2>Book a Table</h2>
+      <p class="section-intro">Tell us when you're coming and how many are in your party. We'll confirm by email within an hour during opening times.</p>
+      <h3>Opening hours</h3>
+      <ul class="hours-list">
+        <li><span>Monday – Thursday</span><b>12:00 – 23:00</b></li>
+        <li><span>Friday – Saturday</span><b>11:00 – 00:00</b></li>
+        <li><span>Sunday</span><b>10:00 – 22:00</b></li>
+      </ul>
+      <p class="address">📍 14 Meeple Lane, Old Town · ☎️ 01234 567 890 · ✉️ hello@diceanddragons.cafe</p>
+    </div>
+    <form id="booking-form" class="booking-form">
+      <label>Name <input type="text" id="bk-name" required></label>
+      <label>Email <input type="email" id="bk-email" required></label>
+      <label>Date <input type="date" id="bk-date" required></label>
+      <label>Time
+        <select id="bk-time" required>
+          <option value="">Choose a time…</option>
+          <option>12:00</option><option>14:00</option><option>16:00</option>
+          <option>18:00</option><option>19:00</option><option>20:00</option><option>21:00</option>
+        </select>
+      </label>
+      <label>Party size
+        <select id="bk-party" required>
+          <option value="">How many players?</option>
+          <option>2</option><option>3</option><option>4</option>
+          <option>5</option><option>6</option><option>7+</option>
+        </select>
+      </label>
+      <label>Anything we should know? <textarea id="bk-notes" rows="3" placeholder="Birthday? First visit? Bringing a toddler?"></textarea></label>
+      <button class="btn btn-primary" type="submit">Request Booking</button>
+      <p id="booking-message" class="form-message" role="status"></p>
+    </form>
+  </div>
+</section>
+
+<aside id="basket-panel" class="basket-panel" aria-label="Your basket" hidden>
+  <div class="basket-head">
+    <h2>Your Basket</h2>
+    <button id="basket-close" type="button" aria-label="Close basket">✕</button>
+  </div>
+  <ul id="basket-items" class="basket-items"></ul>
+  <p id="basket-empty" class="basket-empty">No games reserved yet — browse the library and tap "Reserve".</p>
+  <div class="basket-foot">
+    <p>Game rental: <b id="basket-total">£0.00</b></p>
+    <p class="basket-note">Rental is waived when you spend £10+ per person at the café.</p>
+    <form id="reserve-form">
+      <label>Your name <input type="text" id="res-name" required></label>
+      <label>Visit date <input type="date" id="res-date" required></label>
+      <button class="btn btn-primary" type="submit">Reserve Games</button>
+    </form>
+    <p id="reserve-message" class="form-message" role="status"></p>
+  </div>
+</aside>
+
+<footer class="site-footer">
+  <div class="container">
+    <p><strong>Dice &amp; Dragons</strong> — Board Game Café &amp; Tavern · 14 Meeple Lane, Old Town</p>
+    <p>Open 7 days · Under-12s play free · Please roll responsibly.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

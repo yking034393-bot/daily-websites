@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lens &amp; Light Photography Studio — Portraits, Weddings &amp; Events</title>
+  <meta name="description" content="Lens & Light is a photography studio capturing portraits, weddings, landscapes and events. Browse the portfolio, meet the photographers and book your session.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="#top">Lens <span>&amp;</span> Light</a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="#portfolio">Portfolio</a>
+        <a href="#services">Services</a>
+        <a href="#photographers">Photographers</a>
+        <a href="#stories">Stories</a>
+        <a href="#booking" class="nav-cta">Book a Session</a>
+      </nav>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-inner">
+        <p class="eyebrow">Photography Studio &middot; Est. 2016</p>
+        <h1>Every moment,<br>beautifully kept.</h1>
+        <p class="hero-sub">Portraits, weddings, landscapes and events — shot with care, delivered with love, and kept for a lifetime.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#booking">Book a Session</a>
+          <a class="btn btn-ghost" href="#portfolio">View Portfolio</a>
+        </div>
+        <dl class="hero-stats">
+          <div><dt>Weddings shot</dt><dd>240+</dd></div>
+          <div><dt>Portrait sessions</dt><dd>1,800+</dd></div>
+          <div><dt>Years behind the lens</dt><dd>9</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="section" id="portfolio">
+      <div class="container">
+        <div class="section-head">
+          <h2>Portfolio</h2>
+          <p>A few favourite frames from recent shoots. Filter by what you love.</p>
+        </div>
+        <div class="filters" role="group" aria-label="Filter portfolio">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="portraits">Portraits</button>
+          <button class="filter-btn" data-filter="weddings">Weddings</button>
+          <button class="filter-btn" data-filter="landscapes">Landscapes</button>
+          <button class="filter-btn" data-filter="events">Events</button>
+        </div>
+        <p class="results-note" id="resultsNote" aria-live="polite"></p>
+        <div class="gallery" id="gallery"></div>
+        <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo preview" hidden>
+          <button class="lightbox-close" id="lightboxClose" aria-label="Close preview">&times;</button>
+          <figure class="lightbox-figure">
+            <div class="lightbox-photo" id="lightboxPhoto"></div>
+            <figcaption id="lightboxCaption"></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="services">
+      <div class="container">
+        <div class="section-head">
+          <h2>Services &amp; Pricing</h2>
+          <p>Simple, honest packages. Every session includes a private online gallery and high-resolution downloads.</p>
+        </div>
+        <div class="service-grid" id="serviceGrid"></div>
+        <p class="fine-print">All packages include a pre-shoot consultation, edited high-resolution images, and a private online gallery for 12 months. Extra hours, prints and albums available on request.</p>
+      </div>
+    </section>
+
+    <section class="section" id="photographers">
+      <div class="container">
+        <div class="section-head">
+          <h2>Meet the Photographers</h2>
+          <p>Three photographers, one shared obsession with honest light.</p>
+        </div>
+        <div class="team-grid">
+          <article class="team-card">
+            <div class="avatar avatar-1" aria-hidden="true">AR</div>
+            <h3>Ana Reyes</h3>
+            <p class="role">Founder &amp; Lead Photographer</p>
+            <p>Weddings and portraits. Ana has shot over 240 weddings and still tears up at the first dance.</p>
+          </article>
+          <article class="team-card">
+            <div class="avatar avatar-2" aria-hidden="true">DK</div>
+            <h3>Daniel Kim</h3>
+            <p class="role">Landscape &amp; Travel</p>
+            <p>Daniel chases dawn light across mountains and coastlines, and prints his favourites large.</p>
+          </article>
+          <article class="team-card">
+            <div class="avatar avatar-3" aria-hidden="true">SP</div>
+            <h3>Sofia Patel</h3>
+            <p class="role">Events &amp; Editorial</p>
+            <p>Sofia covers concerts, conferences and celebrations — invisible until the moment matters.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="stories">
+      <div class="container">
+        <div class="section-head">
+          <h2>Kind Words</h2>
+          <p>What clients say after the gallery arrives.</p>
+        </div>
+        <div class="testimonial-grid">
+          <blockquote>
+            <p>&ldquo;Ana made our wedding feel effortless. The photos look like the day felt — we cried all over again.&rdquo;</p>
+            <footer>— Maya &amp; Tom, Wedding, June 2026</footer>
+          </blockquote>
+          <blockquote>
+            <p>&ldquo;The family portraits are the first photos of us all that everyone actually loves. Worth every penny.&rdquo;</p>
+            <footer>— The Okafor Family, Portrait Session</footer>
+          </blockquote>
+          <blockquote>
+            <p>&ldquo;Sofia captured our product launch without ever getting in the way. The shots ran in three magazines.&rdquo;</p>
+            <footer>— Lena Ortiz, Events Client</footer>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="booking">
+      <div class="container booking-wrap">
+        <div class="booking-info">
+          <h2>Book a Session</h2>
+          <p>Tell us about your shoot and we will reply within one working day with availability and a quote.</p>
+          <ul class="contact-list">
+            <li><strong>Studio:</strong> 14 Aperture Lane, Old Town</li>
+            <li><strong>Hours:</strong> Tue–Sat, 9:00–18:00</li>
+            <li><strong>Email:</strong> hello@lensandlight.studio</li>
+            <li><strong>Phone:</strong> (555) 014-2016</li>
+          </ul>
+          <p class="booking-note">Weekend wedding dates book 3–6 months ahead — early enquiry is warmly recommended.</p>
+        </div>
+        <form class="booking-form" id="bookingForm" novalidate>
+          <label>
+            Your name
+            <input type="text" name="name" required autocomplete="name" placeholder="e.g. Alex Morgan">
+          </label>
+          <label>
+            Email
+            <input type="email" name="email" required autocomplete="email" placeholder="you@example.com">
+          </label>
+          <label>
+            Session type
+            <select name="type" required>
+              <option value="">Choose a session…</option>
+              <option>Portrait Session</option>
+              <option>Wedding</option>
+              <option>Family Session</option>
+              <option>Event Coverage</option>
+              <option>Landscape / Travel Commission</option>
+            </select>
+          </label>
+          <label>
+            Preferred date
+            <input type="date" name="date" required>
+          </label>
+          <label>
+            Tell us about your shoot
+            <textarea name="details" rows="4" placeholder="Location, number of people, style you love…"></textarea>
+          </label>
+          <p class="form-error" id="formError" role="alert" hidden></p>
+          <button class="btn btn-primary" type="submit">Request Booking</button>
+          <p class="form-success" id="formSuccess" role="status" hidden></p>
+        </form>
+      </div>
+    </section>
+
+    <section class="newsletter">
+      <div class="container newsletter-inner">
+        <h2>Photo of the Month</h2>
+        <p>One favourite frame and one photography tip, once a month. No spam, ever.</p>
+        <form class="newsletter-form" id="newsletterForm" novalidate>
+          <label class="sr-only" for="newsletterEmail">Email address</label>
+          <input type="email" id="newsletterEmail" placeholder="you@example.com" required>
+          <button class="btn btn-primary" type="submit">Subscribe</button>
+        </form>
+        <p class="form-success" id="newsletterSuccess" role="status" hidden></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p><strong>Lens &amp; Light Photography Studio</strong> — 14 Aperture Lane, Old Town &middot; (555) 014-2016</p>
+      <p class="copyright">&copy; 2026 Lens &amp; Light Photography Studio. All photographs shown are the studio&rsquo;s own work.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

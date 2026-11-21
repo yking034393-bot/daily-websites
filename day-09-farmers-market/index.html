@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maple &amp; Main Farmers Market — Fresh, Local, Every Saturday</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="#top">🥕 Maple <span>&amp;</span> Main</a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">☰</button>
+    <nav class="main-nav" id="mainNav">
+      <a href="#vendors">Vendors</a>
+      <a href="#produce">In Season</a>
+      <a href="#schedule">Market Days</a>
+      <a href="#recipes">Recipes</a>
+      <a href="#stall">Book a Stall</a>
+      <a href="#visit">Visit</a>
+    </nav>
+    <button class="basket-btn" id="basketBtn" aria-label="Open basket">🧺 Basket <span class="basket-count" id="basketCount">0</span></button>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="wrap hero-inner">
+    <div class="hero-text">
+      <p class="eyebrow">Every Saturday · 8am – 1pm · Maple Street &amp; Main</p>
+      <h1>Fresh from the field, <em>straight to your table.</em></h1>
+      <p class="lede">Over 40 local growers, bakers, makers and food trucks gather on Maple Street every Saturday. Browse this week's stalls, plan your shop, and taste the season.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#vendors">Browse this week's vendors</a>
+        <a class="btn btn-ghost" href="#produce">What's in season</a>
+      </div>
+      <div class="hero-stats">
+        <div><strong>42</strong><span>stalls this week</span></div>
+        <div><strong>18</strong><span>local farms</span></div>
+        <div><strong>0</strong><span>food miles wasted*</span></div>
+      </div>
+      <p class="fine">*Most produce travels under 30 miles from farm to stall.</p>
+    </div>
+    <div class="hero-card">
+      <p class="card-label">🌤️ This Saturday</p>
+      <h2>Market day forecast</h2>
+      <p class="big-temp">21°C <span>sunny, light breeze</span></p>
+      <p>Perfect market weather — bring a tote, stay for brunch.</p>
+      <ul class="hero-list">
+        <li>🍓 <strong>First strawberries</strong> from Willow Creek Farm</li>
+        <li>🧀 <strong>New:</strong> aged cheddar from Old Mill Dairy</li>
+        <li>🎶 Live music from The Honeybees, 10–12</li>
+        <li>👧 Kids' veggie-printing tent, 9–11</li>
+      </ul>
+      <a class="btn btn-primary btn-block" href="#schedule">See the full day</a>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="vendors">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>This week's vendors</h2>
+      <p>Search stalls, filter by what they sell, and add their goods to your basket for a quicker Saturday shop.</p>
+    </div>
+    <div class="toolbar">
+      <input type="search" id="vendorSearch" placeholder="Search vendors or products…" aria-label="Search vendors">
+      <div class="filters" id="vendorFilters">
+        <button class="filter-btn active" data-filter="all">All stalls</button>
+        <button class="filter-btn" data-filter="produce">🥬 Produce</button>
+        <button class="filter-btn" data-filter="bakery">🍞 Bakery</button>
+        <button class="filter-btn" data-filter="dairy">🧀 Dairy &amp; Eggs</button>
+        <button class="filter-btn" data-filter="meat">🥩 Meat &amp; Fish</button>
+        <button class="filter-btn" data-filter="crafts">🕯️ Crafts</button>
+        <button class="filter-btn" data-filter="food">🌮 Hot Food</button>
+      </div>
+      <label class="sort-label">Sort
+        <select id="vendorSort">
+          <option value="name">Name A–Z</option>
+          <option value="stall">Stall number</option>
+          <option value="price">Price: low to high</option>
+        </select>
+      </label>
+    </div>
+    <p class="result-count" id="resultCount"></p>
+    <div class="vendor-grid" id="vendorGrid"></div>
+  </div>
+</section>
+
+<section class="section section-alt" id="produce">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>What's in season — November</h2>
+      <p>Seasonal eating at its best. Tap a crop to see which stalls carry it this week.</p>
+    </div>
+    <div class="season-tabs" id="seasonTabs">
+      <button class="season-tab active" data-month="november">November</button>
+      <button class="season-tab" data-month="december">December</button>
+      <button class="season-tab" data-month="january">January</button>
+    </div>
+    <div class="produce-grid" id="produceGrid"></div>
+    <p class="season-note" id="seasonNote"></p>
+  </div>
+</section>
+
+<section class="section" id="schedule">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Market day schedule</h2>
+      <p>Saturday 8am–1pm, rain or shine. Here's how the morning unfolds.</p>
+    </div>
+    <ol class="timeline" id="timeline"></ol>
+  </div>
+</section>
+
+<section class="section section-alt" id="recipes">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>From the market, to your kitchen</h2>
+      <p>Three quick recipes built entirely from this week's stalls.</p>
+    </div>
+    <div class="recipe-grid" id="recipeGrid"></div>
+  </div>
+</section>
+
+<section class="section" id="stall">
+  <div class="wrap split">
+    <div>
+      <h2>Sell at the market</h2>
+      <p>We're always looking for new growers, bakers and makers. Stalls start at £25 a Saturday, with a free first taster day for new vendors. Tell us about your stall and we'll be in touch within two working days.</p>
+      <ul class="check-list">
+        <li>Power and water hook-ups on request</li>
+        <li>Card readers available to borrow</li>
+        <li>Free stall for under-18s' first market</li>
+      </ul>
+    </div>
+    <form class="form-card" id="stallForm" novalidate>
+      <label>Your name
+        <input type="text" id="stallName" required placeholder="e.g. Priya Sharma">
+      </label>
+      <label>Email
+        <input type="email" id="stallEmail" required placeholder="you@example.com">
+      </label>
+      <label>What do you sell?
+        <select id="stallType" required>
+          <option value="">Choose a category…</option>
+          <option>Fresh produce</option>
+          <option>Baked goods</option>
+          <option>Dairy &amp; eggs</option>
+          <option>Meat &amp; fish</option>
+          <option>Hot food</option>
+          <option>Crafts &amp; plants</option>
+          <option>Other</option>
+        </select>
+      </label>
+      <label>Tell us about your stall
+        <textarea id="stallAbout" rows="3" placeholder="What makes your produce special?"></textarea>
+      </label>
+      <p class="form-error" id="stallError" hidden>Please fill in your name, a valid email and a category.</p>
+      <button class="btn btn-primary btn-block" type="submit">Request a stall</button>
+      <p class="form-success" id="stallSuccess" hidden>✅ Thanks! Your stall request is in — we'll email you within two working days.</p>
+    </form>
+  </div>
+</section>
+
+<section class="section section-alt" id="visit">
+  <div class="wrap split">
+    <div>
+      <h2>Plan your visit</h2>
+      <address>
+        <strong>Maple &amp; Main Farmers Market</strong><br>
+        Maple Street, off Main Square<br>
+        Open Saturdays, 8:00am – 1:00pm<br>
+        <a href="mailto:hello@mapleandmain.example">hello@mapleandmain.example</a>
+      </address>
+      <ul class="visit-list">
+        <li>🚌 Bus 4, 12 &amp; 27 stop at Main Square</li>
+        <li>🚲 Free bike racks at the Maple Street gate</li>
+        <li>♿ Step-free access from both entrances</li>
+        <li>🐕 Dogs on leads welcome</li>
+      </ul>
+    </div>
+    <form class="form-card" id="newsForm" novalidate>
+      <h3>📬 The Saturday List</h3>
+      <p>One email every Friday: who's trading, what's ripe, and any last-minute changes.</p>
+      <label>Email
+        <input type="email" id="newsEmail" required placeholder="you@example.com">
+      </label>
+      <p class="form-error" id="newsError" hidden>Please enter a valid email address.</p>
+      <button class="btn btn-primary btn-block" type="submit">Sign me up</button>
+      <p class="form-success" id="newsSuccess" hidden>✅ You're on the list — see you Saturday!</p>
+    </form>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <p><strong>🥕 Maple &amp; Main Farmers Market</strong> — grown, baked and made within 30 miles.</p>
+    <p class="fine">A demo website built by Muse · Day 09 of the daily-websites project · 2026-11-13</p>
+  </div>
+</footer>
+
+<div class="drawer-overlay" id="drawerOverlay" hidden></div>
+<aside class="basket-drawer" id="basketDrawer" aria-hidden="true" aria-label="Shopping basket">
+  <div class="drawer-head">
+    <h2>Your basket</h2>
+    <button class="drawer-close" id="drawerClose" aria-label="Close basket">✕</button>
+  </div>
+  <div class="drawer-body" id="drawerBody"></div>
+  <div class="drawer-foot">
+    <p class="drawer-total">Total: <strong id="drawerTotal">£0.00</strong></p>
+    <button class="btn btn-primary btn-block" id="checkoutBtn">Reserve for Saturday pickup</button>
+    <p class="form-success" id="checkoutSuccess" hidden>✅ Reserved! Show this at the market info tent on Saturday to collect your order. Code: <strong id="reserveCode"></strong></p>
+  </div>
+</aside>
+
+<script src="script.js"></script>
+</body>
+</html>

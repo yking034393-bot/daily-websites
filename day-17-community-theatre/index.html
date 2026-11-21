@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Velvet Stage — Community Theatre</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="#top">🎭 The Velvet Stage</a>
+    <nav class="main-nav">
+      <a href="#shows">Season</a>
+      <a href="#plan">Plan Your Visit</a>
+      <a href="#get-involved">Get Involved</a>
+      <a href="#about">About</a>
+      <button class="basket-btn" id="basketToggle" type="button">🎟️ Tickets <span class="basket-count" id="basketCount">0</span></button>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <!-- Hero -->
+  <section class="hero">
+    <div class="wrap hero-inner">
+      <p class="eyebrow">Community theatre · Est. 1987</p>
+      <h1>Stories told by neighbours,<br>for neighbours.</h1>
+      <p class="lede">The Velvet Stage is a volunteer-run theatre in the heart of town. Four productions a season, tickets from £8, and a seat with your name on it.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#shows">See the season</a>
+        <a class="btn btn-ghost" href="#get-involved">Audition with us</a>
+      </div>
+      <p class="hero-note" id="nextShowNote">Next performance: loading…</p>
+    </div>
+  </section>
+
+  <!-- Shows -->
+  <section class="section" id="shows">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>This season</h2>
+        <p>Filter by genre, or search by title. Tap a show to pick a date and book seats.</p>
+      </div>
+      <div class="filters">
+        <input type="search" id="showSearch" placeholder="Search shows…" aria-label="Search shows">
+        <div class="chip-group" id="genreChips">
+          <button class="chip active" data-genre="all" type="button">All</button>
+          <button class="chip" data-genre="drama" type="button">Drama</button>
+          <button class="chip" data-genre="comedy" type="button">Comedy</button>
+          <button class="chip" data-genre="musical" type="button">Musical</button>
+          <button class="chip" data-genre="family" type="button">Family</button>
+        </div>
+      </div>
+      <div class="shows-grid" id="showsGrid"></div>
+      <p class="empty" id="noShows" hidden>No shows match your search. Try a different title or genre.</p>
+    </div>
+  </section>
+
+  <!-- Booking modal -->
+  <div class="modal" id="bookingModal" hidden>
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal-close" id="modalClose" type="button" aria-label="Close">✕</button>
+      <h3 id="modalTitle">Book tickets</h3>
+      <p class="modal-show" id="modalShow"></p>
+      <label class="field">
+        <span>Performance date</span>
+        <select id="perfDate"></select>
+      </label>
+      <div class="ticket-rows" id="ticketRows"></div>
+      <p class="modal-total">Total: <strong id="modalTotal">£0</strong></p>
+      <button class="btn btn-primary btn-block" id="addToBasket" type="button">Add to basket</button>
+      <p class="modal-note">No payment is taken here — pay at the box office or on collection.</p>
+    </div>
+  </div>
+
+  <!-- Plan your visit -->
+  <section class="section section-alt" id="plan">
+    <div class="wrap">
+      <h2>Plan your visit</h2>
+      <div class="visit-grid">
+        <article class="card">
+          <h3>📍 Finding us</h3>
+          <p>14 Lantern Lane, Old Town<br>Two minutes from the market square. Step-free access from the side entrance on Rose Alley.</p>
+        </article>
+        <article class="card">
+          <h3>🕖 Tonight</h3>
+          <p id="tonightInfo">Doors open 45 minutes before curtain up. The bar serves interval drinks and homemade cake.</p>
+          <p class="open-status" id="openStatus">Checking opening times…</p>
+        </article>
+        <article class="card">
+          <h3>🎟️ Ticket prices</h3>
+          <ul class="price-list">
+            <li><span>Adult</span><strong>£14</strong></li>
+            <li><span>Concession</span><strong>£11</strong></li>
+            <li><span>Under 18</span><strong>£8</strong></li>
+            <li><span>Family (2+2)</span><strong>£38</strong></li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Get involved -->
+  <section class="section" id="get-involved">
+    <div class="wrap">
+      <h2>Get involved</h2>
+      <div class="involved-grid">
+        <article class="card">
+          <h3>🎤 Auditions</h3>
+          <p>Open auditions for our spring musical, <em>Sunshine on Leith Street</em>, are on 6 &amp; 7 December. No experience needed — just bring a song you love.</p>
+          <button class="btn btn-secondary" id="auditionBtn" type="button">Register interest</button>
+          <p class="form-msg" id="auditionMsg" hidden>Thank you! We'll email you the audition pack. Break a leg!</p>
+        </article>
+        <article class="card">
+          <h3>🙋 Volunteer</h3>
+          <p>Front of house, lighting, set building, costume — there's a job for every pair of hands. One evening a week is plenty.</p>
+          <button class="btn btn-secondary" id="volunteerBtn" type="button">Join the crew</button>
+          <p class="form-msg" id="volunteerMsg" hidden>Welcome aboard! Our volunteer coordinator will be in touch this week.</p>
+        </article>
+        <article class="card">
+          <h3>💌 Season newsletter</h3>
+          <p>First look at casting, ticket releases and backstage stories — once a month, never more.</p>
+          <form id="newsletterForm">
+            <input type="email" id="newsletterEmail" placeholder="you@example.com" required aria-label="Email address">
+            <button class="btn btn-secondary" type="submit">Subscribe</button>
+          </form>
+          <p class="form-msg" id="newsletterMsg" hidden>You're on the list. See you at the theatre!</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="section section-alt" id="about">
+    <div class="wrap about-inner">
+      <h2>About The Velvet Stage</h2>
+      <p>Founded in 1987 by a drama teacher, a plumber and a very determined librarian, The Velvet Stage has staged over 120 productions — from Shakespeare in the round to pantomimes that sell out in a weekend. Everything is run by volunteers, and every penny goes back into the building, the costumes and the next show.</p>
+      <div class="stats">
+        <div class="stat"><strong>120+</strong><span>productions</span></div>
+        <div class="stat"><strong>38</strong><span>years on stage</span></div>
+        <div class="stat"><strong>90</strong><span>volunteers</span></div>
+        <div class="stat"><strong>4</strong><span>shows a season</span></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- Basket drawer -->
+<aside class="basket-drawer" id="basketDrawer" aria-label="Ticket basket" hidden>
+  <div class="drawer-head">
+    <h3>Your tickets</h3>
+    <button class="modal-close" id="basketClose" type="button" aria-label="Close basket">✕</button>
+  </div>
+  <div id="basketItems"></div>
+  <p class="empty" id="basketEmpty">Your basket is empty. Pick a show and add some tickets.</p>
+  <div class="drawer-foot" id="basketFoot" hidden>
+    <p class="drawer-total">Total: <strong id="basketTotal">£0</strong></p>
+    <button class="btn btn-primary btn-block" id="reserveBtn" type="button">Reserve tickets</button>
+    <p class="modal-note">Reserve now, pay on collection at the box office.</p>
+  </div>
+  <p class="form-msg" id="reserveMsg" hidden>Reserved! Your reference is <strong id="reserveRef"></strong>. Collect from the box office up to 30 minutes before curtain up.</p>
+</aside>
+<div class="drawer-scrim" id="drawerScrim" hidden></div>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <p><strong>The Velvet Stage</strong> · 14 Lantern Lane, Old Town · Box office: 01234 567 890</p>
+    <p>Registered charity No. 512340 · A volunteer-run community theatre</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

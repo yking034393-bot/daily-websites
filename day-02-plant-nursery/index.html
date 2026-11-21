@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Green Thumb Nursery — Plants, Pots &amp; Garden Care</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="logo" href="#">🌿 Green Thumb <span>Nursery</span></a>
+    <nav>
+      <a href="#shop">Shop Plants</a>
+      <a href="#care">Care Guide</a>
+      <a href="#visit">Visit Us</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="cart-btn" id="cartBtn" type="button">🛒 Basket (<span id="cartCount">0</span>)</button>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container hero-inner">
+    <div class="hero-text">
+      <p class="eyebrow">Est. 2012 · Family-run garden centre</p>
+      <h1>Bring your home<br>back to life.</h1>
+      <p class="lede">Healthy, nursery-grown plants — from low-light survivors to statement
+      monsters — delivered to your door with a care card for every single one.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#shop">Shop the collection</a>
+        <a class="btn btn-ghost" href="#care">Plant care 101</a>
+      </div>
+      <ul class="hero-stats">
+        <li><strong>400+</strong> varieties in stock</li>
+        <li><strong>4.9 ★</strong> from 2,300 gardeners</li>
+        <li><strong>30-day</strong> happy-plant guarantee</li>
+      </ul>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      <div class="pot">🪴</div>
+      <div class="pot small">🌵</div>
+      <div class="pot tiny">🌱</div>
+    </div>
+  </div>
+</section>
+
+<section class="filters container" id="shop">
+  <h2>Shop plants</h2>
+  <p class="section-sub">Filter by light — every plant is labelled with what it really needs.</p>
+  <div class="filter-row" role="group" aria-label="Filter plants by light">
+    <button class="filter-btn active" data-filter="all" type="button">All plants</button>
+    <button class="filter-btn" data-filter="low" type="button">☁️ Low light</button>
+    <button class="filter-btn" data-filter="bright" type="button">☀️ Bright light</button>
+    <button class="filter-btn" data-filter="pet" type="button">🐾 Pet friendly</button>
+  </div>
+  <div class="plant-grid" id="plantGrid"></div>
+  <p class="empty-note" id="emptyNote" hidden>No plants match that filter — try another one.</p>
+</section>
+
+<section class="care" id="care">
+  <div class="container">
+    <h2>Plant care 101</h2>
+    <p class="section-sub">Three habits that keep almost any houseplant alive.</p>
+    <div class="care-grid">
+      <article class="care-card">
+        <div class="care-icon">💧</div>
+        <h3>Water less, not more</h3>
+        <p>Check the top 2&nbsp;cm of soil first. If it is dry, water thoroughly until it
+        drains — then leave it alone. Overwatering kills more plants than drought.</p>
+      </article>
+      <article class="care-card">
+        <div class="care-icon">☀️</div>
+        <h3>Match the light</h3>
+        <p>"Bright indirect light" means near a window, out of direct sun. A plant
+        stretching toward the window is asking for more light; scorched leaves mean less.</p>
+      </article>
+      <article class="care-card">
+        <div class="care-icon">🪴</div>
+        <h3>Repot when root-bound</h3>
+        <p>Roots circling the bottom or poking out of drainage holes mean it is time for
+        a pot 3–5&nbsp;cm wider, with fresh, free-draining potting mix.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="visit container" id="visit">
+  <div class="visit-card">
+    <div>
+      <h2>Visit the nursery</h2>
+      <p>Walk the greenhouses, ask our growers anything, and take home a plant
+      you have already met in person.</p>
+      <address>
+        14 Greenhouse Lane, Willowbrook<br>
+        Open Mon–Sat 9:00–18:00 · Sun 10:00–16:00
+      </address>
+    </div>
+    <a class="btn btn-primary" href="#contact">Get directions</a>
+  </div>
+</section>
+
+<footer class="site-footer" id="contact">
+  <div class="container footer-inner">
+    <div>
+      <strong>🌿 Green Thumb Nursery</strong>
+      <p>Plants, pots &amp; honest advice since 2012.</p>
+    </div>
+    <div>
+      <p><strong>Contact</strong></p>
+      <p>hello@greenthumb.example<br>+1 (555) 014-2830</p>
+    </div>
+    <div>
+      <p><strong>Newsletter</strong></p>
+      <form id="newsletterForm" class="newsletter">
+        <input type="email" id="newsletterEmail" placeholder="Your email" required aria-label="Email address">
+        <button class="btn btn-primary" type="submit">Join</button>
+      </form>
+      <p class="form-note" id="newsletterNote" aria-live="polite"></p>
+    </div>
+  </div>
+  <p class="copyright">© 2026 Green Thumb Nursery. Demo site built by Muse — Day 02 of the daily websites series.</p>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="script.js"></script>
+</body>
+</html>

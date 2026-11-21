@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spin &amp; Groove Records — Vinyl Record Store</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="logo" href="#">&#9836; Spin &amp; Groove <span>Records</span></a>
+    <nav class="main-nav">
+      <a href="#catalogue">Records</a>
+      <a href="#new">New Arrivals</a>
+      <a href="#gear">Turntables &amp; Gear</a>
+      <a href="#events">Listening Nights</a>
+      <a href="#visit">Visit Us</a>
+    </nav>
+    <button class="basket-btn" id="basketBtn" type="button">Basket (<span id="basketCount">0</span>)</button>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-inner">
+    <div class="hero-copy">
+      <p class="eyebrow">Independent record store &middot; Est. 2012</p>
+      <h1>Every great record deserves a second spin.</h1>
+      <p>New pressings, rare originals and lovingly graded used vinyl — plus the turntables and care kit to play them properly. Dig in, listen first, take home something you&rsquo;ll love.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#catalogue">Browse the crates</a>
+        <a class="btn btn-ghost" href="#events">Listening nights</a>
+      </div>
+      <p class="open-status" id="openStatus"></p>
+    </div>
+    <div class="hero-vinyl" aria-hidden="true">
+      <div class="record"><div class="label">S&amp;G</div></div>
+      <div class="sleeve">Rumours &middot; Fleetwood Mac</div>
+    </div>
+  </div>
+</section>
+
+<section class="strip">
+  <div class="wrap strip-inner">
+    <div><strong>12,000+</strong><span>records in store</span></div>
+    <div><strong>Free listening</strong><span>at every station</span></div>
+    <div><strong>We buy vinyl</strong><span>cash or trade, daily</span></div>
+    <div><strong>Grading you can trust</strong><span>every used record play-checked</span></div>
+  </div>
+</section>
+
+<main class="wrap">
+  <section id="catalogue" class="section">
+    <h2>The Crates</h2>
+    <p class="section-intro">Search the shelves or filter by genre and format. Every used record is graded and play-checked before it goes out.</p>
+    <div class="controls">
+      <input type="search" id="searchInput" placeholder="Search artist, album or label&hellip;" aria-label="Search records">
+      <select id="genreFilter" aria-label="Filter by genre">
+        <option value="all">All genres</option>
+        <option value="rock">Rock</option>
+        <option value="jazz">Jazz</option>
+        <option value="soul">Soul &amp; Funk</option>
+        <option value="electronic">Electronic</option>
+        <option value="hiphop">Hip-Hop</option>
+        <option value="classical">Classical</option>
+      </select>
+      <select id="formatFilter" aria-label="Filter by format">
+        <option value="all">All formats</option>
+        <option value="new">New pressing</option>
+        <option value="used">Used original</option>
+        <option value="7">7&Prime; single</option>
+      </select>
+      <select id="sortSelect" aria-label="Sort records">
+        <option value="featured">Featured</option>
+        <option value="price-low">Price: low to high</option>
+        <option value="price-high">Price: high to low</option>
+        <option value="year-new">Newest first</option>
+        <option value="year-old">Oldest first</option>
+      </select>
+    </div>
+    <p class="results-count" id="resultsCount"></p>
+    <div class="grid" id="recordGrid"></div>
+  </section>
+
+  <section id="new" class="section">
+    <h2>New Arrivals This Week</h2>
+    <p class="section-intro">Fresh pressings and just-graded used stock, in the shop now.</p>
+    <div class="grid" id="newGrid"></div>
+  </section>
+
+  <section id="gear" class="section">
+    <h2>Turntables &amp; Gear</h2>
+    <p class="section-intro">Everything you need to play your records well — and keep them sounding great.</p>
+    <div class="grid" id="gearGrid"></div>
+  </section>
+
+  <section id="events" class="section">
+    <h2>Listening Nights &amp; Events</h2>
+    <div class="events">
+      <article class="event">
+        <p class="event-date">Fri 21 Nov &middot; 7:00 pm</p>
+        <h3>Full-Album Friday: Rumours</h3>
+        <p>We play the whole album front to back on the shop system, lights low, no talking over the quiet bits. Free entry, bring a friend.</p>
+      </article>
+      <article class="event">
+        <p class="event-date">Sat 22 Nov &middot; 11:00 am</p>
+        <h3>Record Fair in the Back Room</h3>
+        <p>Eight local collectors set up stalls with their own crates. Early birds from 10:30 am. Free entry.</p>
+      </article>
+      <article class="event">
+        <p class="event-date">Wed 26 Nov &middot; 6:30 pm</p>
+        <h3>Turntable Clinic</h3>
+        <p>Bring your deck: we&rsquo;ll check alignment, tracking force and belt wear, and show you how to clean your stylus properly.</p>
+      </article>
+      <article class="event">
+        <p class="event-date">First Saturday monthly &middot; 2:00 pm</p>
+        <h3>Vinyl 101 for Beginners</h3>
+        <p>New to records? We cover formats, grading, storage and what to look for when buying used. Free, no booking needed.</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="visit" class="section visit">
+    <div class="visit-card">
+      <h2>Visit the Shop</h2>
+      <p><strong>Spin &amp; Groove Records</strong><br>14 Needle Lane, Old Town<br>Open Mon&ndash;Sat 10:00&ndash;18:00, Sun 11:00&ndash;17:00</p>
+      <p>Two listening stations, a coffee machine that mostly works, and a cat called B-side who supervises the jazz section.</p>
+      <p class="open-status" id="openStatus2"></p>
+    </div>
+    <div class="visit-card sell">
+      <h2>Sell Us Your Records</h2>
+      <p>Bring your collection in any weekday before 4:00 pm. We pay cash or offer 20% more in store credit, and we grade everything in front of you.</p>
+      <ul>
+        <li>Collections of any size welcome</li>
+        <li>We buy rock, jazz, soul, hip-hop, classical and more</li>
+        <li>Fair prices, explained honestly</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section newsletter">
+    <h2>Join the Crate Diggers&rsquo; List</h2>
+    <p>One email a week: new arrivals, staff picks and event invites. No spam, ever.</p>
+    <form id="newsletterForm">
+      <input type="email" id="newsletterEmail" placeholder="you@example.com" required aria-label="Email address">
+      <button class="btn btn-primary" type="submit">Sign up</button>
+    </form>
+    <p class="form-msg" id="newsletterMsg" role="status"></p>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <p><strong>Spin &amp; Groove Records</strong> &middot; 14 Needle Lane, Old Town</p>
+    <p>Mon&ndash;Sat 10:00&ndash;18:00 &middot; Sun 11:00&ndash;17:00 &middot; hello@spinandgroove.example</p>
+    <p class="fine">Demo website built for the Daily Websites project &mdash; Day 16.</p>
+  </div>
+</footer>
+
+<div class="basket-drawer" id="basketDrawer" aria-hidden="true">
+  <div class="basket-panel">
+    <div class="basket-head">
+      <h2>Your Basket</h2>
+      <button class="close-btn" id="closeBasket" type="button" aria-label="Close basket">&times;</button>
+    </div>
+    <div id="basketItems"></div>
+    <div class="basket-foot">
+      <p class="basket-total">Total: <strong id="basketTotal">&pound;0.00</strong></p>
+      <label class="reserve-label" for="reserveDay">Collect on</label>
+      <select id="reserveDay">
+        <option>Today</option>
+        <option>Tomorrow</option>
+        <option>Saturday</option>
+      </select>
+      <button class="btn btn-primary btn-block" id="reserveBtn" type="button">Reserve for collection</button>
+      <p class="form-msg" id="reserveMsg" role="status"></p>
+      <p class="fine">Pay in store when you collect. Items are held for 48 hours.</p>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

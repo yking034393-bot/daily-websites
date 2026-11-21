@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pedal &amp; Peak Cycles — Bikes, Repairs &amp; Trail Rides</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="#">🚲 Pedal &amp; Peak Cycles</a>
+      <nav class="main-nav">
+        <a href="#bikes">Bikes</a>
+        <a href="#services">Workshop</a>
+        <a href="#rentals">Rentals</a>
+        <a href="#trails">Trails</a>
+        <a href="#visit">Visit Us</a>
+      </nav>
+      <button class="basket-btn" id="basketBtn" aria-label="View basket">🛒 Basket <span id="basketCount">0</span></button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap hero-inner">
+        <div class="hero-text">
+          <p class="eyebrow">Est. 2014 · Hillcrest, Lakeside</p>
+          <h1>Find the bike that fits your ride.</h1>
+          <p class="lede">From city commuters to full-suspension trail machines — hand-built, tuned and fitted by people who ride every day. Free first service on every bike we sell.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#bikes">Browse bikes</a>
+            <a class="btn btn-ghost" href="#services">Book a service</a>
+          </div>
+          <ul class="hero-stats">
+            <li><strong>320+</strong> bikes in stock</li>
+            <li><strong>48h</strong> average repair turnaround</li>
+            <li><strong>4.9★</strong> from 1,100+ riders</li>
+          </ul>
+        </div>
+        <div class="hero-card">
+          <p class="hero-card-tag">🚴 Ride of the month</p>
+          <h2>Summit Trail 29 — Carbon</h2>
+          <p>Full-suspension trail bike, 140&nbsp;mm travel, Shimano 12-speed. Built for the long climb and the fast way down.</p>
+          <p class="price">$2,899 <span class="was">$3,199</span></p>
+          <button class="btn btn-primary" data-add="summit-trail-29">Add to basket</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="wrap features-grid">
+        <div class="feature"><span class="icon">🔧</span><h3>Free first service</h3><p>Every bike leaves with a free 6-week tune-up included.</p></div>
+        <div class="feature"><span class="icon">📏</span><h3>Expert bike fitting</h3><p>30-minute fitting session so the bike fits you, not the other way round.</p></div>
+        <div class="feature"><span class="icon">🚚</span><h3>Free local delivery</h3><p>Built, tuned and delivered to your door within 10 miles.</p></div>
+        <div class="feature"><span class="icon">♻️</span><h3>Trade-in welcome</h3><p>Part-exchange your old bike against anything in the shop.</p></div>
+      </div>
+    </section>
+
+    <section id="bikes" class="section">
+      <div class="wrap">
+        <h2>Our bikes</h2>
+        <p class="section-lede">Every bike is assembled in-store by a qualified mechanic and test-ridden before it leaves.</p>
+        <div class="controls">
+          <input type="search" id="searchInput" placeholder="Search by name or brand…" aria-label="Search bikes">
+          <div class="filters" id="typeFilters">
+            <button class="filter-btn active" data-type="all">All</button>
+            <button class="filter-btn" data-type="road">Road</button>
+            <button class="filter-btn" data-type="mountain">Mountain</button>
+            <button class="filter-btn" data-type="hybrid">Hybrid</button>
+            <button class="filter-btn" data-type="electric">Electric</button>
+            <button class="filter-btn" data-type="kids">Kids</button>
+          </div>
+          <label class="sort-label">Sort
+            <select id="sortSelect">
+              <option value="featured">Featured</option>
+              <option value="price-asc">Price: low to high</option>
+              <option value="price-desc">Price: high to low</option>
+            </select>
+          </label>
+        </div>
+        <div class="bike-grid" id="bikeGrid"></div>
+        <p class="empty" id="emptyMsg" hidden>No bikes match your search — try a different term or filter.</p>
+      </div>
+    </section>
+
+    <section id="services" class="section section-alt">
+      <div class="wrap">
+        <h2>Workshop &amp; services</h2>
+        <p class="section-lede">Book online, drop the bike off, and we will call you when it is ready.</p>
+        <div class="service-grid" id="serviceGrid"></div>
+        <form class="booking-form" id="bookingForm">
+          <h3>Book a service</h3>
+          <label>Your name <input type="text" id="bookName" required placeholder="Alex Rider"></label>
+          <label>Service
+            <select id="bookService">
+              <option>Full Service — $89</option>
+              <option>Safety Check — $25</option>
+              <option>Wheel True &amp; Spoke — $30</option>
+              <option>Brake Bleed — $35</option>
+              <option>Drivetrain Deep Clean — $45</option>
+              <option>E-Bike Diagnostics — $55</option>
+            </select>
+          </label>
+          <label>Preferred date <input type="date" id="bookDate" required></label>
+          <button class="btn btn-primary" type="submit">Request booking</button>
+          <p class="form-note" id="bookingNote"></p>
+        </form>
+      </div>
+    </section>
+
+    <section id="rentals" class="section">
+      <div class="wrap">
+        <h2>Rentals</h2>
+        <p class="section-lede">Visiting the lakes? Rent a bike for the day — helmet, lock and map included.</p>
+        <div class="rental-grid" id="rentalGrid"></div>
+      </div>
+    </section>
+
+    <section id="trails" class="section section-alt">
+      <div class="wrap">
+        <h2>Local trails we love</h2>
+        <p class="section-lede">Our favourite rides from the shop door, graded so you know what you are in for.</p>
+        <div class="trail-list" id="trailList"></div>
+      </div>
+    </section>
+
+    <section id="visit" class="section">
+      <div class="wrap visit-grid">
+        <div>
+          <h2>Visit us</h2>
+          <address>
+            14 Switchback Lane<br>
+            Hillcrest, Lakeside<br>
+            Open Mon–Sat 9:00–18:00 · Sun 10:00–16:00
+          </address>
+          <p>📞 (555) 014-2900 · ✉️ hello@pedalandpeak.example</p>
+          <p>Group rides leave from the shop every Saturday at 8:30 — all levels welcome.</p>
+        </div>
+        <form class="newsletter" id="newsletterForm">
+          <h3>Ride notes, once a month</h3>
+          <p>New arrivals, trail conditions and workshop tips. No spam, ever.</p>
+          <label>Email <input type="email" id="newsEmail" required placeholder="you@example.com"></label>
+          <button class="btn btn-primary" type="submit">Subscribe</button>
+          <p class="form-note" id="newsNote"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>© 2026 Pedal &amp; Peak Cycles — a fictional bike shop built for Day 5 of the daily-websites project.</p>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>

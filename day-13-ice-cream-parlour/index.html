@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Golden Scoop — Artisan Ice Cream Parlour</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="logo" href="#">🍦 The Golden Scoop</a>
+    <nav>
+      <a href="#flavours">Flavours</a>
+      <a href="#sundae">Build a Sundae</a>
+      <a href="#visit">Visit Us</a>
+      <a href="#parties">Parties</a>
+      <button class="basket-btn" id="basketBtn" type="button">Basket 🛒 <span id="basketCount">0</span></button>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-inner">
+    <div>
+      <p class="eyebrow">Hand-churned since 1987</p>
+      <h1>Ice cream worth<br>licking the spoon for.</h1>
+      <p class="lede">Small-batch scoops, waffle cones baked in-house every morning, and toppings piled as high as you like. Forty flavours, one golden rule: no shortcuts.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#flavours">Browse flavours</a>
+        <a class="btn btn-ghost" href="#sundae">Build a sundae</a>
+      </div>
+      <ul class="hero-stats">
+        <li><strong>40</strong> flavours</li>
+        <li><strong>12</strong> toppings</li>
+        <li><strong>£3.20</strong> from a scoop</li>
+      </ul>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      <div class="cone">🍦</div>
+      <div class="float-chip chip-1">🥭 Mango Sorbet</div>
+      <div class="float-chip chip-2">🍫 Triple Choc</div>
+      <div class="float-chip chip-3">🍓 Strawberry</div>
+    </div>
+  </div>
+</section>
+
+<section class="ticker" aria-label="Today's specials">
+  <div class="wrap" id="tickerText">Today's special: Pistachio &amp; Honey — two scoops for £5.50 until 6pm.</div>
+</section>
+
+<main class="wrap">
+  <section id="flavours" class="section">
+    <h2>Our Flavours</h2>
+    <p class="section-sub">Filter by what you fancy — every flavour is churned in-house in small batches.</p>
+    <div class="filters" role="group" aria-label="Filter flavours">
+      <button class="filter active" data-filter="all" type="button">All</button>
+      <button class="filter" data-filter="classic" type="button">Classics</button>
+      <button class="filter" data-filter="fruit" type="button">Fruit &amp; Sorbet</button>
+      <button class="filter" data-filter="chocolate" type="button">Chocolate</button>
+      <button class="filter" data-filter="vegan" type="button">Vegan</button>
+    </div>
+    <div class="search-row">
+      <input type="search" id="flavourSearch" placeholder="Search flavours — try “salted caramel”…" aria-label="Search flavours">
+    </div>
+    <div class="flavour-grid" id="flavourGrid"></div>
+    <p class="empty-note" id="noFlavours" hidden>No flavours match that search — try another word.</p>
+  </section>
+
+  <section id="sundae" class="section sundae-section">
+    <h2>Build Your Own Sundae</h2>
+    <p class="section-sub">Pick a size, choose up to three scoops, add toppings — the price updates as you go.</p>
+    <div class="sundae-builder">
+      <div class="builder-col">
+        <h3>1 · Size</h3>
+        <div class="option-row" id="sizeOptions">
+          <button class="option selected" data-price="4.50" type="button">Regular · £4.50</button>
+          <button class="option" data-price="6.00" type="button">Large · £6.00</button>
+          <button class="option" data-price="7.50" type="button">Golden · £7.50</button>
+        </div>
+        <h3>2 · Scoops <span class="hint">(pick up to 3)</span></h3>
+        <div class="option-row wrap-row" id="scoopOptions"></div>
+        <h3>3 · Toppings <span class="hint">(£0.60 each)</span></h3>
+        <div class="option-row wrap-row" id="toppingOptions"></div>
+      </div>
+      <aside class="sundae-summary">
+        <h3>Your sundae</h3>
+        <p id="sundaeSummary">Regular sundae — choose your scoops.</p>
+        <p class="total">Total: <strong id="sundaeTotal">£4.50</strong></p>
+        <button class="btn btn-primary" id="addSundaeBtn" type="button" disabled>Add sundae to basket</button>
+        <button class="btn btn-ghost" id="clearSundaeBtn" type="button">Start again</button>
+      </aside>
+    </div>
+  </section>
+
+  <section id="visit" class="section visit">
+    <div class="visit-card">
+      <h2>Visit the Parlour</h2>
+      <address>14 Seaside Parade, Brighton BN2 1FG</address>
+      <table class="hours">
+        <tr><td>Mon – Thu</td><td>11:00 – 21:00</td></tr>
+        <tr><td>Fri – Sat</td><td>10:00 – 22:30</td></tr>
+        <tr><td>Sunday</td><td>10:00 – 20:00</td></tr>
+      </table>
+      <p class="open-now" id="openNow">Checking opening hours…</p>
+      <p>📞 01273 555 014 · ✉️ hello@goldenscoop.example</p>
+    </div>
+    <div class="visit-card">
+      <h2>Good to know</h2>
+      <ul class="good-list">
+        <li>🌱 Vegan and dairy-free scoops in every flavour family</li>
+        <li>🥜 Nut-free counter available — ask a scooper</li>
+        <li>🐶 Dogs welcome on the terrace, with a free pup-cup</li>
+        <li>🎂 Birthday sundaes with a candle, on the house</li>
+        <li>🚲 Free cone for cyclists on the first Sunday of the month</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="parties" class="section">
+    <h2>Parties &amp; Scoop Socials</h2>
+    <p class="section-sub">Hire the parlour after hours, or book our cart for your event. Tell us the details and we'll come back within a day.</p>
+    <form id="partyForm" class="party-form">
+      <label>Name <input type="text" id="partyName" required></label>
+      <label>Email <input type="email" id="partyEmail" required></label>
+      <label>Date <input type="date" id="partyDate" required></label>
+      <label>Guests
+        <select id="partyGuests">
+          <option>Up to 10</option>
+          <option>11 – 25</option>
+          <option>26 – 50</option>
+          <option>50+</option>
+        </select>
+      </label>
+      <label class="full">Anything else? <textarea id="partyNotes" rows="3" placeholder="Birthday, wedding, school fete…"></textarea></label>
+      <button class="btn btn-primary" type="submit">Request a booking</button>
+      <p class="form-msg" id="partyMsg" role="status"></p>
+    </form>
+  </section>
+
+  <section class="section newsletter">
+    <h2>Join the Scoop List</h2>
+    <p>One email a month: new flavours, secret sundaes, and first dibs on summer specials.</p>
+    <form id="newsForm" class="news-form">
+      <input type="email" id="newsEmail" placeholder="you@example.com" required aria-label="Email address">
+      <button class="btn btn-primary" type="submit">Sign me up</button>
+    </form>
+    <p class="form-msg" id="newsMsg" role="status"></p>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>© 2026 The Golden Scoop Ice Cream Parlour · 14 Seaside Parade, Brighton</p>
+    <p>Made with cream, sugar, and far too much enthusiasm.</p>
+  </div>
+</footer>
+
+<div class="basket-drawer" id="basketDrawer" hidden>
+  <div class="drawer-head">
+    <h3>Your basket</h3>
+    <button id="closeBasket" type="button" aria-label="Close basket">✕</button>
+  </div>
+  <ul id="basketItems" class="basket-items"></ul>
+  <p class="basket-empty" id="basketEmpty">Your basket is empty — go and pick a flavour.</p>
+  <div class="drawer-foot">
+    <p>Total: <strong id="basketTotal">£0.00</strong></p>
+    <button class="btn btn-primary" id="checkoutBtn" type="button">Reserve for collection</button>
+    <p class="form-msg" id="checkoutMsg" role="status"></p>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

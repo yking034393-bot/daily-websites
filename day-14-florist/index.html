@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fern &amp; Fable — Florist &amp; Flower Studio</title>
+  <meta name="description" content="Fern & Fable is a neighbourhood florist crafting fresh bouquets, wedding flowers and same-day delivery arrangements.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="#">🌸 Fern <span>&amp;</span> Fable</a>
+      <nav class="main-nav">
+        <a href="#shop">Shop</a>
+        <a href="#occasions">Occasions</a>
+        <a href="#subscriptions">Subscriptions</a>
+        <a href="#care">Flower Care</a>
+        <a href="#visit">Visit Us</a>
+      </nav>
+      <button class="basket-btn" id="basketToggle" type="button">🧺 Basket <span id="basketCount">0</span></button>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="wrap hero-inner">
+      <div class="hero-text">
+        <p class="eyebrow">Fresh flowers, cut this morning</p>
+        <h1>Flowers that say it<br>before you do.</h1>
+        <p class="lede">Hand-tied bouquets, wedding flowers and sympathy arrangements, made to order by our florists and delivered the same day across town.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#shop">Shop bouquets</a>
+          <a class="btn btn-ghost" href="#subscriptions">Weekly flowers</a>
+        </div>
+        <p class="hero-note">🚚 Same-day delivery on orders before 2pm &nbsp;•&nbsp; 🌿 Locally grown stems where possible</p>
+      </div>
+      <div class="hero-card">
+        <div class="hero-bouquet">💐</div>
+        <p class="hero-card-title">Bouquet of the week</p>
+        <p class="hero-card-name">The Meadow — peonies, ranunculus &amp; sweet peas</p>
+        <p class="hero-card-price">$58 <span>· was $68</span></p>
+        <button class="btn btn-primary btn-block" type="button" data-add="The Meadow Bouquet" data-price="58">Add to basket</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="open-status">
+    <div class="wrap">
+      <p id="openIndicator">Checking opening hours…</p>
+    </div>
+  </section>
+
+  <main class="wrap">
+    <section id="shop" class="section">
+      <div class="section-head">
+        <h2>Shop bouquets &amp; arrangements</h2>
+        <p>Every arrangement is made to order — no two are exactly alike.</p>
+      </div>
+      <div class="filters" id="filters">
+        <input type="search" id="searchInput" placeholder="Search flowers, e.g. roses…" aria-label="Search bouquets">
+        <div class="filter-buttons" role="group" aria-label="Filter by category">
+          <button type="button" class="filter-btn active" data-filter="all">All</button>
+          <button type="button" class="filter-btn" data-filter="bouquet">Bouquets</button>
+          <button type="button" class="filter-btn" data-filter="roses">Roses</button>
+          <button type="button" class="filter-btn" data-filter="seasonal">Seasonal</button>
+          <button type="button" class="filter-btn" data-filter="plants">Potted</button>
+        </div>
+        <label class="sort-label">Sort
+          <select id="sortSelect">
+            <option value="featured">Featured</option>
+            <option value="price-asc">Price: low to high</option>
+            <option value="price-desc">Price: high to low</option>
+            <option value="name">Name A–Z</option>
+          </select>
+        </label>
+      </div>
+      <div class="grid" id="productGrid"></div>
+      <p class="empty-note" id="emptyNote" hidden>No bouquets match your search — try a different flower or category.</p>
+    </section>
+
+    <section id="occasions" class="section">
+      <h2>For every occasion</h2>
+      <div class="occasion-grid">
+        <article class="occasion-card"><span>💐</span><h3>Birthdays</h3><p>Bright, joyful bunches that arrive before the cake does.</p></article>
+        <article class="occasion-card"><span>💍</span><h3>Weddings</h3><p>Bridal bouquets, buttonholes and full venue florals. Consultations free.</p></article>
+        <article class="occasion-card"><span>🕊️</span><h3>Sympathy</h3><p>Gentle white and green arrangements, delivered with care.</p></article>
+        <article class="occasion-card"><span>❤️</span><h3>Just because</h3><p>No reason needed. Our most popular reason, actually.</p></article>
+      </div>
+    </section>
+
+    <section id="subscriptions" class="section">
+      <div class="section-head">
+        <h2>Weekly flower subscriptions</h2>
+        <p>A fresh bunch on your doorstep every week. Pause or cancel anytime.</p>
+      </div>
+      <div class="plan-grid">
+        <article class="plan-card">
+          <h3>The Posy</h3><p class="plan-price">$19<span>/week</span></p>
+          <ul><li>A small seasonal posy</li><li>Perfect for a desk or bedside</li><li>Free delivery</li></ul>
+          <button class="btn btn-ghost btn-block" type="button" data-plan="The Posy">Choose The Posy</button>
+        </article>
+        <article class="plan-card plan-featured">
+          <p class="plan-badge">Most popular</p>
+          <h3>The Bouquet</h3><p class="plan-price">$35<span>/week</span></p>
+          <ul><li>A full hand-tied bouquet</li><li>Vase-ready, with care card</li><li>Free delivery</li></ul>
+          <button class="btn btn-primary btn-block" type="button" data-plan="The Bouquet">Choose The Bouquet</button>
+        </article>
+        <article class="plan-card">
+          <h3>The Showstopper</h3><p class="plan-price">$59<span>/week</span></p>
+          <ul><li>A large statement arrangement</li><li>Premium &amp; rare stems</li><li>Free delivery &amp; vase hire</li></ul>
+          <button class="btn btn-ghost btn-block" type="button" data-plan="The Showstopper">Choose The Showstopper</button>
+        </article>
+      </div>
+      <p class="plan-note" id="planNote" role="status"></p>
+    </section>
+
+    <section id="care" class="section">
+      <h2>Keep them blooming</h2>
+      <ol class="care-list">
+        <li><strong>Trim stems</strong> at an angle under running water before placing in the vase.</li>
+        <li><strong>Fresh water daily</strong> — change it, and re-trim every two days.</li>
+        <li><strong>Keep cool</strong> — away from radiators, fruit bowls and direct sun.</li>
+        <li><strong>Remove spent blooms</strong> so the rest of the bunch lasts longer.</li>
+      </ol>
+    </section>
+
+    <section id="visit" class="section visit">
+      <div>
+        <h2>Visit the studio</h2>
+        <p>14 Willow Lane, Old Town<br>Open Mon–Sat 8am–6pm, Sun 9am–4pm<br>Phone: (555) 014-2830<br>Email: hello@fernandfable.example</p>
+      </div>
+      <form id="deliveryForm" class="delivery-form">
+        <h3>Book a delivery</h3>
+        <label>Your name <input type="text" id="dName" required></label>
+        <label>Delivery date <input type="date" id="dDate" required></label>
+        <label>Message on the card <input type="text" id="dMessage" placeholder="Happy birthday, love Mum…"></label>
+        <button class="btn btn-primary" type="submit">Request delivery</button>
+        <p class="form-note" id="deliveryNote" role="status"></p>
+      </form>
+    </section>
+  </main>
+
+  <aside class="basket-panel" id="basketPanel" aria-label="Basket">
+    <div class="basket-head">
+      <h2>Your basket</h2>
+      <button type="button" id="basketClose" aria-label="Close basket">✕</button>
+    </div>
+    <ul class="basket-list" id="basketList"></ul>
+    <p class="basket-empty" id="basketEmpty">Your basket is empty — add a bouquet to get started.</p>
+    <div class="basket-foot">
+      <p>Total: <strong id="basketTotal">$0</strong></p>
+      <button class="btn btn-primary btn-block" type="button" id="checkoutBtn">Reserve for collection</button>
+      <p class="form-note" id="checkoutNote" role="status"></p>
+    </div>
+  </aside>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p><strong>Fern &amp; Fable</strong> — Florist &amp; Flower Studio, 14 Willow Lane, Old Town.</p>
+      <p>Same-day delivery before 2pm · Weddings by consultation · © 2026 Fern &amp; Fable</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

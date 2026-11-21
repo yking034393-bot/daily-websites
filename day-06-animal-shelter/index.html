@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paws &amp; Whiskers — Animal Shelter &amp; Pet Adoption</title>
+  <meta name="description" content="Paws & Whiskers Animal Shelter: meet adoptable dogs, cats and rabbits, learn how adoption works, volunteer, or donate to help animals find loving homes.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="#">🐾 Paws &amp; Whiskers</a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="#pets">Adopt</a>
+        <a href="#process">How Adoption Works</a>
+        <a href="#volunteer">Volunteer</a>
+        <a href="#events">Events</a>
+        <a href="#donate" class="btn btn-primary nav-cta">Donate</a>
+      </nav>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-text">
+        <h1>Every pet deserves a home.</h1>
+        <p>We're a no-kill shelter caring for dogs, cats, and rabbits while they wait for their forever family. Maybe that family is yours.</p>
+        <div class="hero-actions">
+          <a href="#pets" class="btn btn-primary">Meet the Pets</a>
+          <a href="#process" class="btn btn-secondary">How Adoption Works</a>
+        </div>
+        <div class="hero-stats">
+          <div><strong id="statPets">0</strong><span>pets waiting</span></div>
+          <div><strong>1,240+</strong><span>adoptions since 2015</span></div>
+          <div><strong>98%</strong><span>reunited or rehomed</span></div>
+        </div>
+      </div>
+      <div class="hero-card" aria-hidden="true">
+        <div class="hero-pet">🐶</div>
+        <p><strong>Buddy</strong> · 2 yrs · Labrador mix</p>
+        <p class="hero-card-note">Adopted last week — happy in his new home!</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="pets">
+    <div class="container">
+      <h2>Meet Our Adoptable Pets</h2>
+      <p class="section-intro">Every pet is vet-checked, vaccinated, and microchipped. Use the filters to find your match.</p>
+
+      <div class="filters" role="group" aria-label="Filter pets">
+        <div class="filter-group">
+          <label for="speciesFilter">Species</label>
+          <select id="speciesFilter">
+            <option value="all">All species</option>
+            <option value="dog">Dogs</option>
+            <option value="cat">Cats</option>
+            <option value="rabbit">Rabbits</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label for="ageFilter">Age</label>
+          <select id="ageFilter">
+            <option value="all">Any age</option>
+            <option value="young">Under 1 year</option>
+            <option value="adult">1–5 years</option>
+            <option value="senior">Over 5 years</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label for="sizeFilter">Size</label>
+          <select id="sizeFilter">
+            <option value="all">Any size</option>
+            <option value="small">Small</option>
+            <option value="medium">Medium</option>
+            <option value="large">Large</option>
+          </select>
+        </div>
+        <div class="filter-group search-group">
+          <label for="searchInput">Search by name</label>
+          <input type="search" id="searchInput" placeholder="e.g. Milo…">
+        </div>
+      </div>
+
+      <p class="results-count" id="resultsCount" aria-live="polite"></p>
+      <div class="pet-grid" id="petGrid"></div>
+      <p class="empty-state" id="emptyState" hidden>No pets match those filters — try widening your search. 🐾</p>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="process">
+    <div class="container">
+      <h2>How Adoption Works</h2>
+      <div class="steps">
+        <div class="step">
+          <span class="step-number">1</span>
+          <h3>Meet them</h3>
+          <p>Visit the shelter or browse online, then spend time with the pet you're drawn to.</p>
+        </div>
+        <div class="step">
+          <span class="step-number">2</span>
+          <h3>Apply</h3>
+          <p>Fill in a short application. We check your home is a good fit — usually within 48 hours.</p>
+        </div>
+        <div class="step">
+          <span class="step-number">3</span>
+          <h3>Take them home</h3>
+          <p>Pay the adoption fee (from $50), sign the agreement, and welcome your new best friend.</p>
+        </div>
+      </div>
+      <p class="fee-note">Adoption fees cover vaccinations, microchipping, and spaying/neutering — and help the next animal waiting for a home.</p>
+    </div>
+  </section>
+
+  <section class="section" id="volunteer">
+    <div class="container split">
+      <div>
+        <h2>Volunteer With Us</h2>
+        <p>Dog walkers, cat cuddlers, foster carers, event helpers — whatever time you can give, our animals will love you for it.</p>
+        <ul class="checklist">
+          <li>🐕 Dog walking — mornings and evenings</li>
+          <li>🐱 Cat socialisation — afternoons</li>
+          <li>🏠 Fostering — short stays for shy or recovering animals</li>
+          <li>🎪 Event help — adoption days and fundraisers</li>
+        </ul>
+      </div>
+      <form class="card-form" id="volunteerForm">
+        <h3>Sign up to volunteer</h3>
+        <label for="volName">Full name</label>
+        <input type="text" id="volName" required placeholder="Your name">
+        <label for="volEmail">Email</label>
+        <input type="email" id="volEmail" required placeholder="you@example.com">
+        <label for="volRole">I'd like to help with</label>
+        <select id="volRole">
+          <option>Dog walking</option>
+          <option>Cat socialisation</option>
+          <option>Fostering</option>
+          <option>Events &amp; fundraising</option>
+        </select>
+        <button type="submit" class="btn btn-primary">Sign Up</button>
+        <p class="form-message" id="volMessage" role="status"></p>
+      </form>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="events">
+    <div class="container">
+      <h2>Upcoming Events</h2>
+      <div class="event-list">
+        <article class="event">
+          <div class="event-date"><span>15</span>Nov</div>
+          <div>
+            <h3>Clear the Shelter Adoption Day</h3>
+            <p>Half-price adoption fees all day, plus free starter kits for every new pet parent. 10am–4pm.</p>
+          </div>
+        </article>
+        <article class="event">
+          <div class="event-date"><span>22</span>Nov</div>
+          <div>
+            <h3>Pet Photo Fundraiser</h3>
+            <p>Professional portraits of your pet for $25 — all proceeds go to our medical fund. 11am–3pm.</p>
+          </div>
+        </article>
+        <article class="event">
+          <div class="event-date"><span>06</span>Dec</div>
+          <div>
+            <h3>Winter Warmers Donation Drive</h3>
+            <p>Blankets, beds, and food for the cold months. Drop donations at the shelter any time.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section donate" id="donate">
+    <div class="container donate-inner">
+      <h2>Can't adopt right now? Donate.</h2>
+      <p>$10 feeds a shelter pet for a week. $25 covers a vaccination. Every dollar goes straight to the animals.</p>
+      <div class="donate-amounts" role="group" aria-label="Choose a donation amount">
+        <button class="amount-btn" data-amount="10">$10</button>
+        <button class="amount-btn" data-amount="25">$25</button>
+        <button class="amount-btn" data-amount="50">$50</button>
+        <button class="amount-btn" data-amount="100">$100</button>
+      </div>
+      <p class="form-message" id="donateMessage" role="status"></p>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <h3>🐾 Paws &amp; Whiskers Animal Shelter</h3>
+        <p>12 Meadow Lane · Open daily 9am–6pm<br>Phone: (555) 014-7788 · hello@pawsandwhiskers.example</p>
+      </div>
+      <div>
+        <h3>Visit us</h3>
+        <p>Mon–Sat: 9am–6pm<br>Sunday: 10am–4pm<br>Adoption viewings until 5pm</p>
+      </div>
+      <div>
+        <h3>Stay in touch</h3>
+        <form class="newsletter" id="newsletterForm">
+          <label for="newsEmail" class="visually-hidden">Email for newsletter</label>
+          <input type="email" id="newsEmail" required placeholder="Your email">
+          <button type="submit" class="btn btn-primary">Subscribe</button>
+        </form>
+        <p class="form-message" id="newsMessage" role="status"></p>
+      </div>
+    </div>
+    <p class="copyright">© 2026 Paws &amp; Whiskers Animal Shelter. A demo website built for the daily-websites project.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

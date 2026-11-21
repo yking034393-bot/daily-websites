@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Verdant Earth — Environmental Conservation</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="logo" href="#">🌿 Verdant Earth</a>
+    <nav>
+      <a href="#projects">Projects</a>
+      <a href="#calculator">Carbon Calculator</a>
+      <a href="#donate">Donate</a>
+      <a href="#volunteer">Volunteer</a>
+      <a href="#events">Events</a>
+    </nav>
+    <a class="btn btn-primary" href="#donate">Plant a Tree</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <p class="eyebrow">A planet worth protecting</p>
+    <h1>Every tree planted is a promise kept.</h1>
+    <p class="hero-sub">Verdant Earth restores forests, cleans oceans and protects wildlife — with 128,000 volunteers in 42 countries. Join the work, track the impact, and see exactly where every donation goes.</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="#donate">Donate now</a>
+      <a class="btn btn-outline" href="#projects">Explore projects</a>
+    </div>
+  </div>
+</section>
+
+<section class="stats">
+  <div class="container stats-grid">
+    <div class="stat"><span class="stat-num" data-target="2487315">0</span><span class="stat-label">trees planted</span></div>
+    <div class="stat"><span class="stat-num" data-target="51240">0</span><span class="stat-label">tonnes of CO₂ offset</span></div>
+    <div class="stat"><span class="stat-num" data-target="128400">0</span><span class="stat-label">volunteers</span></div>
+    <div class="stat"><span class="stat-num" data-target="86">0</span><span class="stat-label">habitats restored</span></div>
+  </div>
+</section>
+
+<section id="projects" class="section">
+  <div class="container">
+    <h2>Our projects</h2>
+    <p class="section-sub">Search and filter the conservation work happening right now.</p>
+    <div class="controls">
+      <input type="search" id="project-search" placeholder="Search projects, places, species…" aria-label="Search projects">
+      <div class="filters" id="project-filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="forests">🌲 Forests</button>
+        <button class="filter-btn" data-filter="oceans">🌊 Oceans</button>
+        <button class="filter-btn" data-filter="wildlife">🦁 Wildlife</button>
+        <button class="filter-btn" data-filter="climate">☀️ Climate</button>
+      </div>
+    </div>
+    <p id="project-count" class="result-count"></p>
+    <div class="cards" id="project-grid"></div>
+  </div>
+</section>
+
+<section id="calculator" class="section section-alt">
+  <div class="container">
+    <h2>Your carbon footprint</h2>
+    <p class="section-sub">A rough estimate — answer three quick questions and see how many trees would balance your year.</p>
+    <div class="calc-grid">
+      <div class="calc-form">
+        <label>Flights per year
+          <input type="range" id="calc-flights" min="0" max="20" value="2">
+          <span class="range-val" id="flights-val">2 flights</span>
+        </label>
+        <label>Car travel (km per week)
+          <input type="range" id="calc-car" min="0" max="500" step="10" value="150">
+          <span class="range-val" id="car-val">150 km</span>
+        </label>
+        <label>Home energy use
+          <select id="calc-energy">
+            <option value="low">Mostly renewable / low use</option>
+            <option value="medium" selected>Average household</option>
+            <option value="high">High use / fossil-heavy grid</option>
+          </select>
+        </label>
+      </div>
+      <div class="calc-result">
+        <p class="calc-big"><span id="calc-tonnes">4.9</span> tonnes CO₂ / year</p>
+        <p>That is roughly <strong id="calc-trees">225</strong> trees growing for a year to absorb it.</p>
+        <p class="calc-note">One mature tree absorbs about 22 kg of CO₂ per year. Figures are estimates for illustration.</p>
+        <a class="btn btn-primary" href="#donate">Offset it — donate</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="donate" class="section">
+  <div class="container">
+    <h2>Donate</h2>
+    <p class="section-sub">100% of public donations fund field projects. Pick an amount and see the impact instantly.</p>
+    <div class="donate-box">
+      <div class="amounts" id="donate-amounts">
+        <button class="amount-btn" data-amount="5">$5</button>
+        <button class="amount-btn active" data-amount="10">$10</button>
+        <button class="amount-btn" data-amount="25">$25</button>
+        <button class="amount-btn" data-amount="50">$50</button>
+        <button class="amount-btn" data-amount="100">$100</button>
+      </div>
+      <label class="custom-amount">Or enter an amount: $<input type="number" id="donate-custom" min="1" value="10"></label>
+      <p class="donate-impact" id="donate-impact">Your $10 plants 5 trees and clears 2 kg of ocean plastic.</p>
+      <div class="donate-frequency">
+        <button class="freq-btn active" data-freq="once">One-time</button>
+        <button class="freq-btn" data-freq="monthly">Monthly</button>
+      </div>
+      <button class="btn btn-primary" id="donate-btn">Donate $10 once</button>
+      <p class="form-msg" id="donate-msg" role="status"></p>
+    </div>
+  </div>
+</section>
+
+<section id="volunteer" class="section section-alt">
+  <div class="container">
+    <h2>Volunteer with us</h2>
+    <p class="section-sub">Tree plantings, beach clean-ups, wildlife surveys — no experience needed.</p>
+    <form id="volunteer-form" class="form">
+      <label>Full name <input type="text" id="vol-name" required placeholder="Your name"></label>
+      <label>Email <input type="email" id="vol-email" required placeholder="you@example.org"></label>
+      <label>I am interested in
+        <select id="vol-interest">
+          <option>Tree planting</option>
+          <option>Beach &amp; river clean-ups</option>
+          <option>Wildlife surveys</option>
+          <option>Community outreach</option>
+        </select>
+      </label>
+      <label>Nearest city <input type="text" id="vol-city" placeholder="e.g. Lahore"></label>
+      <button class="btn btn-primary" type="submit">Join as a volunteer</button>
+      <p class="form-msg" id="vol-msg" role="status"></p>
+    </form>
+  </div>
+</section>
+
+<section id="events" class="section">
+  <div class="container">
+    <h2>Upcoming events</h2>
+    <div class="cards">
+      <article class="card">
+        <h3>🌳 Community Tree Planting Day</h3>
+        <p class="card-meta">Sat 28 Nov · 9:00 AM · Riverside Park</p>
+        <p>Help us plant 1,000 native saplings in a single morning. Tools and lunch provided.</p>
+        <button class="btn btn-outline rsvp-btn">Reserve a spot</button>
+      </article>
+      <article class="card">
+        <h3>🏖️ Beach Clean-Up Weekend</h3>
+        <p class="card-meta">Sat 5 Dec · 8:00 AM · Clifton Beach</p>
+        <p>Join 300 volunteers clearing plastic from the shoreline. Gloves and bags provided.</p>
+        <button class="btn btn-outline rsvp-btn">Reserve a spot</button>
+      </article>
+      <article class="card">
+        <h3>🦅 Wetland Bird Survey</h3>
+        <p class="card-meta">Sun 13 Dec · 6:30 AM · Haleji Lake</p>
+        <p>Count migratory birds with our ecologists. Binoculars available to borrow.</p>
+        <button class="btn btn-outline rsvp-btn">Reserve a spot</button>
+      </article>
+    </div>
+    <p class="form-msg" id="rsvp-msg" role="status"></p>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <h2>Stay in the loop</h2>
+    <p class="section-sub">One short email a month: project updates, new data, and ways to help.</p>
+    <form id="newsletter-form" class="form inline-form">
+      <input type="email" id="news-email" required placeholder="you@example.org" aria-label="Email address">
+      <button class="btn btn-primary" type="submit">Subscribe</button>
+    </form>
+    <p class="form-msg" id="news-msg" role="status"></p>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <p><strong>Verdant Earth</strong> — a demo conservation website built for the daily-websites project. All projects, figures and events on this page are illustrative.</p>
+    <p>Contact: hello@verdantearth.example · Registered charity no. VE-2026-0118</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

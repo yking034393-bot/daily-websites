@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Harmony Yoga Studio — Breathe. Stretch. Belong.</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="logo" href="#">🪷 Harmony Yoga</a>
+    <nav>
+      <a href="#classes">Classes</a>
+      <a href="#schedule">Schedule</a>
+      <a href="#teachers">Teachers</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#book" class="btn btn-small">Book a Class</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container hero-inner">
+    <div class="hero-text">
+      <p class="eyebrow">A calm space in the middle of the city</p>
+      <h1>Breathe in calm.<br>Breathe out stress.</h1>
+      <p class="lead">Small-group yoga classes for every body and every level — from your very first sun salutation to advanced flows. Mats, props and warm tea included.</p>
+      <div class="hero-actions">
+        <a href="#book" class="btn">Book Your First Class — Free</a>
+        <a href="#classes" class="btn btn-ghost">Explore Classes</a>
+      </div>
+      <p class="hero-note">★ 4.9 from 320+ students &nbsp;·&nbsp; No experience needed</p>
+    </div>
+    <div class="hero-card">
+      <div class="pose">🧘‍♀️</div>
+      <p class="hero-card-title">Today's featured class</p>
+      <p class="hero-card-name">Sunrise Flow · 7:00 AM</p>
+      <p class="hero-card-meta">60 min · All levels · 3 spots left</p>
+      <button class="btn btn-block" data-book="Sunrise Flow">Reserve a Spot</button>
+    </div>
+  </div>
+</section>
+
+<section id="classes" class="section">
+  <div class="container">
+    <h2>Find your class</h2>
+    <p class="section-sub">Filter by level to find the right fit.</p>
+    <div class="filters" id="filters">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="beginner">Beginner</button>
+      <button class="filter-btn" data-filter="intermediate">Intermediate</button>
+      <button class="filter-btn" data-filter="advanced">Advanced</button>
+      <button class="filter-btn" data-filter="restorative">Restorative</button>
+    </div>
+    <div class="class-grid" id="classGrid"></div>
+  </div>
+</section>
+
+<section id="schedule" class="section section-alt">
+  <div class="container">
+    <h2>This week's schedule</h2>
+    <p class="section-sub">Pick a day and tap a class to reserve your mat.</p>
+    <div class="day-tabs" id="dayTabs"></div>
+    <ul class="schedule-list" id="scheduleList"></ul>
+  </div>
+</section>
+
+<section id="teachers" class="section">
+  <div class="container">
+    <h2>Meet your teachers</h2>
+    <div class="teacher-grid">
+      <article class="teacher-card">
+        <div class="avatar">🌸</div>
+        <h3>Meera Kapoor</h3>
+        <p class="role">Founder · Vinyasa &amp; Hatha</p>
+        <p>12 years teaching. Meera believes yoga should feel like coming home — warm, unhurried and kind.</p>
+      </article>
+      <article class="teacher-card">
+        <div class="avatar">🌿</div>
+        <h3>Daniel Osei</h3>
+        <p class="role">Power Flow &amp; Strength</p>
+        <p>A former athlete who fell in love with the breath. Expect a strong, sweaty, joyful practice.</p>
+      </article>
+      <article class="teacher-card">
+        <div class="avatar">🌙</div>
+        <h3>Sana Iqbal</h3>
+        <p class="role">Yin, Restorative &amp; Breathwork</p>
+        <p>Sana's evening classes are famous for putting the whole room to sleep — in the best way.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="pricing" class="section section-alt">
+  <div class="container">
+    <h2>Simple pricing</h2>
+    <div class="pricing-grid">
+      <article class="price-card">
+        <h3>Drop-In</h3>
+        <p class="price">$18<span>/class</span></p>
+        <ul><li>Any single class</li><li>All props included</li><li>Valid for 30 days</li></ul>
+        <button class="btn btn-ghost btn-block" data-plan="Drop-In">Choose Drop-In</button>
+      </article>
+      <article class="price-card featured">
+        <p class="badge">Most popular</p>
+        <h3>Monthly Unlimited</h3>
+        <p class="price">$89<span>/month</span></p>
+        <ul><li>Unlimited classes</li><li>Free guest pass monthly</li><li>10% off workshops</li></ul>
+        <button class="btn btn-block" data-plan="Monthly Unlimited">Choose Monthly</button>
+      </article>
+      <article class="price-card">
+        <h3>10-Class Pack</h3>
+        <p class="price">$150<span>/pack</span></p>
+        <ul><li>10 classes, your pace</li><li>Valid for 6 months</li><li>Shareable with a friend</li></ul>
+        <button class="btn btn-ghost btn-block" data-plan="10-Class Pack">Choose 10-Class Pack</button>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="book" class="section">
+  <div class="container booking">
+    <div>
+      <h2>Book your mat</h2>
+      <p class="section-sub">Your first class is free. Tell us when you're coming and we'll have a mat ready.</p>
+      <ul class="info-list">
+        <li>📍 24 Willow Lane, open 6:30 AM – 9:00 PM</li>
+        <li>📞 (555) 014-7788</li>
+        <li>✉️ hello@harmonyyoga.example</li>
+      </ul>
+    </div>
+    <form id="bookingForm" class="booking-form">
+      <label>Name <input type="text" id="name" required placeholder="Your name"></label>
+      <label>Email <input type="email" id="email" required placeholder="you@example.com"></label>
+      <label>Class
+        <select id="classSelect">
+          <option>Sunrise Flow</option>
+          <option>Gentle Hatha</option>
+          <option>Power Flow</option>
+          <option>Lunch Reset</option>
+          <option>Yin &amp; Restore</option>
+          <option>Weekend Warrior Flow</option>
+        </select>
+      </label>
+      <label>Date <input type="date" id="date" required></label>
+      <button type="submit" class="btn btn-block">Confirm Booking</button>
+      <p class="form-msg" id="formMsg" role="status"></p>
+    </form>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>🪷 Harmony Yoga Studio — Breathe. Stretch. Belong.</p>
+    <p class="fine">Day 03 of the daily-websites series. Built with HTML, CSS and JavaScript.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Story Nook — Independent Bookstore</title>
+<meta name="description" content="The Story Nook is a cosy independent bookstore in the heart of town. Browse staff picks, join book clubs, and find your next great read.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="logo" href="#">📖 The Story Nook</a>
+    <nav class="main-nav">
+      <a href="#books">Books</a>
+      <a href="#events">Events</a>
+      <a href="#clubs">Book Clubs</a>
+      <a href="#visit">Visit Us</a>
+    </nav>
+    <button class="basket-btn" id="basketBtn" type="button">🧺 Basket (<span id="basketCount">0</span>)</button>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container hero-inner">
+    <div class="hero-text">
+      <p class="eyebrow">Independent since 2012</p>
+      <h1>Every great story starts on a shelf like this one.</h1>
+      <p class="lead">A cosy neighbourhood bookstore with hand-picked shelves, honest recommendations, and a kettle that's always on. Come browse — stay for a chapter.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#books">Browse the shelves</a>
+        <a class="btn btn-ghost" href="#events">What's on this week</a>
+      </div>
+      <p class="hero-note">📍 14 Lantern Lane &nbsp;·&nbsp; Open today 9am – 8pm</p>
+    </div>
+    <div class="hero-card">
+      <p class="card-label">📚 Staff Pick of the Month</p>
+      <h2>The Midnight Garden</h2>
+      <p class="card-author">by Elena Marsh</p>
+      <p class="card-blurb">"A warm, quietly magical novel about a gardener who grows other people's lost memories. I finished it in two sittings and immediately started again." — <em>Priya, bookseller</em></p>
+      <p class="card-price">£14.99</p>
+      <button class="btn btn-primary" type="button" data-add="The Midnight Garden">Add to basket</button>
+    </div>
+  </div>
+</section>
+
+<section class="features">
+  <div class="container features-grid">
+    <div class="feature"><span>🚚</span><h3>Free local delivery</h3><p>Order by 3pm and we'll drop books off within 3 miles, free.</p></div>
+    <div class="feature"><span>🎁</span><h3>Gift wrapping</h3><p>Beautiful paper, ribbon, and a handwritten note — always free.</p></div>
+    <div class="feature"><span>🔄</span><h3>Buy-back shelf</h3><p>Bring in books you've finished and swap them for store credit.</p></div>
+    <div class="feature"><span>☕</span><h3>Reading nook &amp; tea</h3><p>Two armchairs, one very good kettle, and no pressure to buy.</p></div>
+  </div>
+</section>
+
+<section class="books" id="books">
+  <div class="container">
+    <h2>Browse the shelves</h2>
+    <p class="section-intro">Search by title or author, or filter by genre. Every book below is in stock today.</p>
+
+    <div class="controls">
+      <input type="search" id="searchInput" placeholder="Search title or author…" aria-label="Search books">
+      <div class="filters" id="genreFilters">
+        <button type="button" class="filter-btn active" data-genre="all">All</button>
+        <button type="button" class="filter-btn" data-genre="fiction">Fiction</button>
+        <button type="button" class="filter-btn" data-genre="mystery">Mystery</button>
+        <button type="button" class="filter-btn" data-genre="children">Children's</button>
+        <button type="button" class="filter-btn" data-genre="nonfiction">Non-fiction</button>
+        <button type="button" class="filter-btn" data-genre="poetry">Poetry</button>
+      </div>
+    </div>
+
+    <p class="results-count" id="resultsCount"></p>
+    <div class="book-grid" id="bookGrid"></div>
+    <p class="empty-state" id="emptyState" hidden>No books match that search. Try another title, author, or genre.</p>
+  </div>
+</section>
+
+<section class="events" id="events">
+  <div class="container">
+    <h2>Events this week</h2>
+    <div class="event-list">
+      <article class="event">
+        <p class="event-date"><strong>Tue 10 Nov</strong> · 6:30pm</p>
+        <h3>Author evening: Elena Marsh</h3>
+        <p>The author of <em>The Midnight Garden</em> reads, chats, and signs copies. Free, booking recommended.</p>
+        <button class="btn btn-small" type="button" data-rsvp="Author evening: Elena Marsh">Reserve a seat</button>
+      </article>
+      <article class="event">
+        <p class="event-date"><strong>Sat 14 Nov</strong> · 10:30am</p>
+        <h3>Saturday Storytime</h3>
+        <p>Picture books, songs, and biscuits for ages 3–7. Drop in, no booking needed.</p>
+        <button class="btn btn-small" type="button" data-rsvp="Saturday Storytime">Add to calendar</button>
+      </article>
+      <article class="event">
+        <p class="event-date"><strong>Sun 15 Nov</strong> · 4:00pm</p>
+        <h3>Poetry open mic</h3>
+        <p>Read a poem you love — or one you wrote. Sign-up sheet at the till from 3pm.</p>
+        <button class="btn btn-small" type="button" data-rsvp="Poetry open mic">I'm coming</button>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="clubs" id="clubs">
+  <div class="container clubs-inner">
+    <div>
+      <h2>Join a book club</h2>
+      <p>Three friendly groups meet here every month. Pick one — or all three.</p>
+      <ul class="club-list">
+        <li><strong>The Night Readers</strong> — fiction, first Thursday, 7pm</li>
+        <li><strong>The Mystery Shelf</strong> — crime &amp; thrillers, second Tuesday, 7pm</li>
+        <li><strong>Little Nooks</strong> — children's books for grown-ups, last Sunday, 11am</li>
+      </ul>
+    </div>
+    <form class="club-form" id="clubForm">
+      <h3>Sign up for a club</h3>
+      <label>Name <input type="text" id="clubName" required placeholder="Your name"></label>
+      <label>Email <input type="email" id="clubEmail" required placeholder="you@example.com"></label>
+      <label>Which club?
+        <select id="clubChoice">
+          <option>The Night Readers</option>
+          <option>The Mystery Shelf</option>
+          <option>Little Nooks</option>
+        </select>
+      </label>
+      <button class="btn btn-primary" type="submit">Join the club</button>
+      <p class="form-msg" id="clubMsg" role="status"></p>
+    </form>
+  </div>
+</section>
+
+<section class="visit" id="visit">
+  <div class="container visit-inner">
+    <div>
+      <h2>Visit us</h2>
+      <p><strong>The Story Nook</strong><br>14 Lantern Lane<br>Old Town</p>
+      <p>📞 (01234) 567 890<br>✉️ hello@thestorynook.example</p>
+    </div>
+    <div>
+      <h3>Opening hours</h3>
+      <table class="hours">
+        <tr><td>Monday – Friday</td><td>9:00am – 8:00pm</td></tr>
+        <tr><td>Saturday</td><td>9:00am – 6:00pm</td></tr>
+        <tr><td>Sunday</td><td>10:00am – 5:00pm</td></tr>
+      </table>
+    </div>
+    <form class="newsletter" id="newsForm">
+      <h3>The Sunday Shelf — our newsletter</h3>
+      <p>One email a week: new arrivals, staff picks, and event news.</p>
+      <input type="email" id="newsEmail" required placeholder="you@example.com" aria-label="Email address">
+      <button class="btn btn-primary" type="submit">Subscribe</button>
+      <p class="form-msg" id="newsMsg" role="status"></p>
+    </form>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>© 2026 The Story Nook · An independent bookstore · Built as Day 04 of the daily-websites project.</p>
+    <p class="fine-print">All book titles, authors, and prices on this page are fictional examples for a demo website.</p>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="script.js"></script>
+</body>
+</html>

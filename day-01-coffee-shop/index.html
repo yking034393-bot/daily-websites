@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brew &amp; Bean Coffee House</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="logo" href="#">☕ Brew &amp; Bean</a>
+    <nav>
+      <a href="#menu">Menu</a>
+      <a href="#about">About</a>
+      <a href="#visit">Visit Us</a>
+      <a class="btn" href="#menu">Order Ahead</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <p class="eyebrow">Freshly roasted · Since 2018</p>
+    <h1>Slow mornings,<br>great coffee.</h1>
+    <p class="lede">Small-batch beans, hand-poured brews, and a quiet corner to call your own. Come for the espresso, stay for the second cup.</p>
+    <div class="hero-actions">
+      <a class="btn btn-dark" href="#menu">See the menu</a>
+      <a class="btn btn-light" href="#visit">Find us</a>
+    </div>
+  </div>
+</section>
+
+<section id="menu" class="section">
+  <div class="container">
+    <h2>Today's menu</h2>
+    <p class="section-intro">Tap a drink to add it to your order.</p>
+    <div class="menu-grid" id="menuGrid"></div>
+    <div class="order-bar">
+      <span id="orderSummary">Your order is empty.</span>
+      <button class="btn btn-dark" id="clearOrder" type="button">Clear</button>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="section section-alt">
+  <div class="container about-grid">
+    <div>
+      <h2>Roasted in small batches</h2>
+      <p>We roast every Monday and Thursday, so the beans in your cup are never more than a few days old. Our house blend is chocolatey and smooth; our single origin changes with the season.</p>
+      <ul class="ticks">
+        <li>Beans from small farms, fairly traded</li>
+        <li>Oat, almond and dairy milk — no extra charge</li>
+        <li>Free Wi-Fi and plenty of plugs</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Today's single origin</h3>
+      <p class="origin">Ethiopia · Yirgacheffe</p>
+      <p>Bright citrus, jasmine, and a clean finish. Best as a pour-over.</p>
+    </div>
+  </div>
+</section>
+
+<section id="visit" class="section">
+  <div class="container visit-grid">
+    <div>
+      <h2>Visit us</h2>
+      <p>12 Roast Lane, Old Town<br>Open daily, 7:00 AM – 6:00 PM</p>
+      <p>Weekends get busy after 9 — order ahead and skip the line.</p>
+    </div>
+    <form class="card" id="contactForm">
+      <h3>Say hello</h3>
+      <label>Name <input type="text" name="name" required></label>
+      <label>Email <input type="email" name="email" required></label>
+      <label>Message <textarea name="message" rows="3" required></textarea></label>
+      <button class="btn btn-dark" type="submit">Send message</button>
+      <p class="form-note" id="formNote"></p>
+    </form>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>© 2026 Brew &amp; Bean Coffee House · Day 01 of the daily websites series</p>
+  </div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>

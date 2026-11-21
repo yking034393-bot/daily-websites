@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sunset Surf School — Learn to Ride the Waves</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="#top">🏄 Sunset <span>Surf School</span></a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">☰</button>
+    <nav class="main-nav" id="mainNav">
+      <a href="#lessons">Lessons</a>
+      <a href="#rentals">Rentals</a>
+      <a href="#schedule">Schedule</a>
+      <a href="#instructors">Instructors</a>
+      <a href="#book">Book a Lesson</a>
+      <a href="#visit">Visit</a>
+    </nav>
+    <button class="basket-btn" id="basketBtn" aria-label="Open basket">🎒 Basket <span class="basket-count" id="basketCount">0</span></button>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="wrap hero-inner">
+    <div class="hero-text">
+      <p class="eyebrow">Sunset Beach · Lessons daily · All levels welcome</p>
+      <h1>Learn to ride the waves, <em>one sunset at a time.</em></h1>
+      <p class="lede">From your very first pop-up to your first green wave, our certified instructors teach surfing the safe, fun way — small groups, warm water, and the best beginner break on the coast.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#lessons">Browse lessons</a>
+        <a class="btn btn-ghost" href="#rentals">Rent a board</a>
+      </div>
+      <div class="hero-stats">
+        <div><strong>2,400+</strong><span>students taught</span></div>
+        <div><strong>12</strong><span>certified instructors</span></div>
+        <div><strong>4.9 ★</strong><span>average rating</span></div>
+      </div>
+    </div>
+    <div class="hero-card">
+      <p class="card-label">🌊 Today's surf conditions</p>
+      <h2>Sunset Beach — Saturday</h2>
+      <p class="big-temp">3–4 ft <span>clean, glassy waves</span></p>
+      <p>Perfect beginner conditions — light offshore wind, warm 22°C water, and a rising tide this afternoon.</p>
+      <ul class="hero-list">
+        <li>🏄 <strong>Best for beginners:</strong> 9am &amp; 4pm sessions</li>
+        <li>🌅 <strong>Sunset session:</strong> 5:30pm, golden hour</li>
+        <li>💧 Water temp 22°C — shorty wetsuit enough</li>
+        <li>⚠️ Rip current low · Lifeguard on duty</li>
+      </ul>
+      <a class="btn btn-primary btn-block" href="#book">Book today's session</a>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="lessons">
+  <div class="wrap">
+    <p class="eyebrow">Lessons</p>
+    <h2>Find your lesson</h2>
+    <p class="section-lede">Every lesson includes board, wetsuit, rash guard, and a certified instructor. Filter by level or type.</p>
+    <div class="filters" id="lessonFilters">
+      <button class="filter-btn active" data-filter="all">All lessons</button>
+      <button class="filter-btn" data-filter="beginner">Beginner</button>
+      <button class="filter-btn" data-filter="intermediate">Intermediate</button>
+      <button class="filter-btn" data-filter="advanced">Advanced</button>
+      <button class="filter-btn" data-filter="kids">Kids</button>
+      <button class="filter-btn" data-filter="private">Private</button>
+    </div>
+    <div class="search-row">
+      <input type="search" id="lessonSearch" placeholder="Search lessons, e.g. “sunset”, “kids”, “private”…">
+    </div>
+    <div class="cards" id="lessonCards"></div>
+    <p class="empty" id="lessonEmpty" hidden>No lessons match — try a different filter or search.</p>
+  </div>
+</section>
+
+<section class="section section-alt" id="rentals">
+  <div class="wrap">
+    <p class="eyebrow">Rentals</p>
+    <h2>Boards &amp; gear, ready to go</h2>
+    <p class="section-lede">Already know the basics? Grab a board and hit the water. Rentals are charged per day and include a leash and wax.</p>
+    <div class="filters" id="rentalFilters">
+      <button class="filter-btn active" data-filter="all">All gear</button>
+      <button class="filter-btn" data-filter="board">Surfboards</button>
+      <button class="filter-btn" data-filter="wetsuit">Wetsuits</button>
+      <button class="filter-btn" data-filter="accessory">Accessories</button>
+    </div>
+    <div class="cards" id="rentalCards"></div>
+  </div>
+</section>
+
+<section class="section" id="schedule">
+  <div class="wrap">
+    <p class="eyebrow">This week</p>
+    <h2>Weekly schedule</h2>
+    <p class="section-lede">Group lessons run every day. Private lessons and kids' clubs are available on request.</p>
+    <div class="table-wrap">
+      <table class="schedule-table">
+        <thead><tr><th>Time</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th><th>Sun</th></tr></thead>
+        <tbody>
+          <tr><td>7:00am</td><td>Dawn Patrol</td><td>Dawn Patrol</td><td>Dawn Patrol</td><td>Dawn Patrol</td><td>Dawn Patrol</td><td>Dawn Patrol</td><td>Dawn Patrol</td></tr>
+          <tr><td>9:00am</td><td>Beginner Group</td><td>Beginner Group</td><td>Beginner Group</td><td>Beginner Group</td><td>Beginner Group</td><td>Beginner Group</td><td>Beginner Group</td></tr>
+          <tr><td>11:00am</td><td>Kids' Club</td><td>—</td><td>Kids' Club</td><td>—</td><td>Kids' Club</td><td>Kids' Club</td><td>Kids' Club</td></tr>
+          <tr><td>2:00pm</td><td>Intermediate</td><td>Intermediate</td><td>Intermediate</td><td>Intermediate</td><td>Intermediate</td><td>Intermediate</td><td>Intermediate</td></tr>
+          <tr><td>4:00pm</td><td>Beginner Group</td><td>Beginner Group</td><td>Beginner Group</td><td>Beginner Group</td><td>Beginner Group</td><td>Beginner Group</td><td>Beginner Group</td></tr>
+          <tr><td>5:30pm</td><td>Sunset Session</td><td>Sunset Session</td><td>Sunset Session</td><td>Sunset Session</td><td>Sunset Session</td><td>Sunset Session</td><td>Sunset Session</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="fine">Dawn Patrol is for intermediate surfers and up. All sessions meet at the blue flag on Sunset Beach, 15 minutes early.</p>
+  </div>
+</section>
+
+<section class="section section-alt" id="instructors">
+  <div class="wrap">
+    <p class="eyebrow">Meet the team</p>
+    <h2>Your instructors</h2>
+    <p class="section-lede">Certified, patient, and obsessed with the ocean — in that order.</p>
+    <div class="cards cards-3">
+      <article class="card"><div class="card-emoji">🧑‍🏫</div><h3>Maya Chen</h3><p class="card-meta">Head Instructor · 12 yrs experience</p><p>Former competitive surfer. Specialises in first-timers and nervous beginners — her students stand up on day one.</p></article>
+      <article class="card"><div class="card-emoji">🏄‍♂️</div><h3>Leo Torres</h3><p class="card-meta">Intermediate &amp; Advanced · 9 yrs experience</p><p>Teaches turns, cutbacks and wave reading. Runs the Dawn Patrol and the Saturday advanced clinic.</p></article>
+      <article class="card"><div class="card-emoji">👩‍👧</div><h3>Sofia Reyes</h3><p class="card-meta">Kids' Club Lead · 7 yrs experience</p><p>Ocean safety specialist. Runs Kids' Club with small groups, games, and a strict fun-first rule.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="pricing">
+  <div class="wrap">
+    <p class="eyebrow">Pricing</p>
+    <h2>Simple, honest prices</h2>
+    <p class="section-lede">No hidden fees. Everything — board, wetsuit, rash guard — is included in lesson prices.</p>
+    <div class="cards cards-3">
+      <article class="card price-card"><h3>Single Lesson</h3><p class="price">$45</p><p class="card-meta">per person · 2 hours</p><p>One group lesson, any level. Gear included. Perfect for a first taste of surfing.</p></article>
+      <article class="card price-card featured"><h3>Surf Week</h3><p class="price">$189</p><p class="card-meta">per person · 5 lessons</p><p>Five group lessons across one week, with a free sunset session and a progress report.</p></article>
+      <article class="card price-card"><h3>Season Pass</h3><p class="price">$499</p><p class="card-meta">per person · 3 months</p><p>Unlimited group lessons for a full season, plus 20% off rentals and shop gear.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="book">
+  <div class="wrap narrow">
+    <p class="eyebrow">Book a lesson</p>
+    <h2>Reserve your spot in the water</h2>
+    <p class="section-lede">Tell us when you're coming and we'll hold your place. We'll confirm by email within a few hours.</p>
+    <form id="bookingForm" class="form">
+      <label>Your name <input type="text" name="name" required placeholder="Alex Rivera"></label>
+      <label>Email <input type="email" name="email" required placeholder="alex@example.com"></label>
+      <div class="form-row">
+        <label>Lesson
+          <select name="lesson" id="lessonSelect" required></select>
+        </label>
+        <label>Date <input type="date" name="date" required></label>
+      </div>
+      <div class="form-row">
+        <label>Time
+          <select name="time" required>
+            <option>7:00am — Dawn Patrol</option>
+            <option selected>9:00am — Morning</option>
+            <option>11:00am — Kids' Club</option>
+            <option>2:00pm — Afternoon</option>
+            <option>4:00pm — Late afternoon</option>
+            <option>5:30pm — Sunset session</option>
+          </select>
+        </label>
+        <label>Surfers <input type="number" name="people" min="1" max="8" value="1" required></label>
+      </div>
+      <label>Anything we should know? <textarea name="notes" rows="3" placeholder="e.g. Never surfed before, a bit nervous, celebrating a birthday…"></textarea></label>
+      <button class="btn btn-primary btn-block" type="submit">Request booking</button>
+      <p class="form-note" id="bookingNote" hidden></p>
+    </form>
+  </div>
+</section>
+
+<section class="section" id="visit">
+  <div class="wrap">
+    <p class="eyebrow">Visit</p>
+    <h2>Find us on Sunset Beach</h2>
+    <div class="visit-grid">
+      <div>
+        <h3>📍 The Surf Shack</h3>
+        <p>12 Boardwalk Lane, Sunset Beach<br>Look for the blue flag and the yellow shack by the lifeguard tower.</p>
+        <h3>🕐 Hours</h3>
+        <p>Daily 6:30am – 7:30pm<br>Rentals from 7am · Last lesson 5:30pm</p>
+      </div>
+      <div>
+        <h3>📞 Contact</h3>
+        <p>Phone: (555) 014-2837<br>Email: hello@sunsetsurf.example<br>Instagram: @sunsetsurfschool</p>
+        <h3>🌊 Good to know</h3>
+        <p>Bring swimwear, sunscreen and a towel — we provide everything else. Free parking at the beach lot.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <p><strong>🏄 Sunset Surf School</strong> — Learn to ride the waves.</p>
+    <p class="fine">Sunset Beach · Open daily 6:30am – 7:30pm · (555) 014-2837</p>
+  </div>
+</footer>
+
+<div class="basket-drawer" id="basketDrawer" hidden>
+  <div class="basket-panel">
+    <div class="basket-head">
+      <h2>Your basket</h2>
+      <button class="basket-close" id="basketClose" aria-label="Close basket">✕</button>
+    </div>
+    <div id="basketItems"></div>
+    <div class="basket-foot">
+      <p><strong>Total: <span id="basketTotal">$0</span></strong></p>
+      <p class="fine">Lessons are booked at checkout — pay at the shack or online.</p>
+      <button class="btn btn-primary btn-block" id="checkoutBtn">Checkout</button>
+      <p class="form-note" id="checkoutNote" hidden></p>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
