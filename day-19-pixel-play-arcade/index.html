@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pixel Play Arcade — Play, Compete, Win</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="logo" href="#">🕹️ Pixel Play Arcade</a>
+    <nav class="main-nav">
+      <a href="#games">Games</a>
+      <a href="#play">Play Snake</a>
+      <a href="#leaderboard">Leaderboard</a>
+      <a href="#tournaments">Tournaments</a>
+      <a href="#membership">Membership</a>
+    </nav>
+    <span class="open-badge" id="openBadge">Checking hours…</span>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <p class="hero-kicker">LAHORE'S FAVOURITE GAME ZONE</p>
+    <h1>Play. Compete. <span>Win.</span></h1>
+    <p class="hero-sub">120+ arcade machines, PC rigs, VR pods and a stage for weekly tournaments. Walk in, pick a game, beat the board.</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="#games">Browse games</a>
+      <a class="btn btn-ghost" href="#play">Play Snake free</a>
+    </div>
+    <div class="stats">
+      <div class="stat"><strong data-count="120">0</strong><span>Arcade games</span></div>
+      <div class="stat"><strong data-count="48">0</strong><span>PC &amp; VR rigs</span></div>
+      <div class="stat"><strong data-count="9600">0</strong><span>Players this month</span></div>
+      <div class="stat"><strong data-count="250000">0</strong><span>Rs prizes won</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="games">
+  <div class="container">
+    <h2>Game catalogue</h2>
+    <p class="section-sub">Search the floor or filter by genre. Every machine is free-play for members.</p>
+    <div class="controls">
+      <input type="search" id="gameSearch" placeholder="Search games — try 'racing'…" aria-label="Search games">
+      <div class="filters" id="genreFilters">
+        <button class="filter-btn active" data-genre="all">All</button>
+        <button class="filter-btn" data-genre="action">Action</button>
+        <button class="filter-btn" data-genre="racing">Racing</button>
+        <button class="filter-btn" data-genre="puzzle">Puzzle</button>
+        <button class="filter-btn" data-genre="sports">Sports</button>
+        <button class="filter-btn" data-genre="adventure">Adventure</button>
+      </div>
+    </div>
+    <p class="result-count" id="resultCount"></p>
+    <div class="game-grid" id="gameGrid"></div>
+  </div>
+</section>
+
+<section class="section section-dark" id="play">
+  <div class="container">
+    <h2>Play Snake — right here, free</h2>
+    <p class="section-sub">Our arcade classic. Use arrow keys or the buttons. Eat the dots, don't hit the walls or yourself.</p>
+    <div class="snake-wrap">
+      <canvas id="snakeCanvas" width="400" height="400"></canvas>
+      <div class="snake-side">
+        <div class="score-box"><span>Score</span><strong id="snakeScore">0</strong></div>
+        <div class="score-box"><span>Best score</span><strong id="snakeBest">0</strong></div>
+        <button class="btn btn-primary" id="snakeStart">Start game</button>
+        <div class="dpad">
+          <button data-dir="up" aria-label="Up">▲</button>
+          <button data-dir="left" aria-label="Left">◀</button>
+          <button data-dir="down" aria-label="Down">▼</button>
+          <button data-dir="right" aria-label="Right">▶</button>
+        </div>
+        <p class="snake-msg" id="snakeMsg">Press Start, then steer with arrow keys.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="leaderboard">
+  <div class="container">
+    <h2>This week's leaderboard</h2>
+    <p class="section-sub">Top scores across all machines. Beat 8,450 and your name goes on the wall.</p>
+    <table class="board">
+      <thead><tr><th>Rank</th><th>Player</th><th>Game</th><th>Score</th></tr></thead>
+      <tbody id="boardBody"></tbody>
+    </table>
+    <form class="score-form" id="scoreForm">
+      <h3>Add your Snake score</h3>
+      <input type="text" id="playerName" placeholder="Your name" maxlength="20" required>
+      <button class="btn btn-primary" type="submit">Add to board</button>
+      <p class="form-msg" id="scoreMsg"></p>
+    </form>
+  </div>
+</section>
+
+<section class="section section-dark" id="tournaments">
+  <div class="container">
+    <h2>Upcoming tournaments</h2>
+    <p class="section-sub">Book a seat — spots go fast. Entry is refunded if the event is cancelled.</p>
+    <div class="event-list" id="eventList"></div>
+  </div>
+</section>
+
+<section class="section" id="membership">
+  <div class="container">
+    <h2>Membership</h2>
+    <p class="section-sub">One pass, every machine. Cancel anytime.</p>
+    <div class="plans">
+      <div class="plan">
+        <h3>Day Pass</h3>
+        <p class="price">Rs 500<span>/day</span></p>
+        <ul><li>Unlimited arcade play</li><li>1 hour PC rig</li><li>Free Wi-Fi</li></ul>
+        <button class="btn btn-ghost plan-btn" data-plan="Day Pass">Choose Day Pass</button>
+      </div>
+      <div class="plan plan-featured">
+        <h3>Monthly Pro</h3>
+        <p class="price">Rs 4,000<span>/month</span></p>
+        <ul><li>Unlimited everything</li><li>2 hours VR every week</li><li>Tournament entry included</li><li>Members-only nights</li></ul>
+        <button class="btn btn-primary plan-btn" data-plan="Monthly Pro">Choose Monthly Pro</button>
+      </div>
+      <div class="plan">
+        <h3>Squad — 4 players</h3>
+        <p class="price">Rs 12,000<span>/month</span></p>
+        <ul><li>4 Monthly Pro passes</li><li>Private squad room</li><li>Team tournament slots</li></ul>
+        <button class="btn btn-ghost plan-btn" data-plan="Squad">Choose Squad</button>
+      </div>
+    </div>
+    <p class="form-msg" id="planMsg"></p>
+  </div>
+</section>
+
+<section class="section" id="visit">
+  <div class="container visit-grid">
+    <div>
+      <h2>Visit us</h2>
+      <p>Pixel Play Arcade, 2nd Floor, Gulberg III, Lahore</p>
+      <p>Open every day: 11:00 AM – 1:00 AM</p>
+      <p>Call: 042-3577-0000 · hello@pixelplay.pk</p>
+    </div>
+    <form class="newsletter" id="newsletterForm">
+      <h3>Get tournament alerts</h3>
+      <input type="email" id="newsletterEmail" placeholder="Your email" required>
+      <button class="btn btn-primary" type="submit">Subscribe</button>
+      <p class="form-msg" id="newsletterMsg"></p>
+    </form>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>© 2026 Pixel Play Arcade · Play. Compete. Win.</p>
+    <p class="footer-note">Demo website built for the daily-websites series — Day 19.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
